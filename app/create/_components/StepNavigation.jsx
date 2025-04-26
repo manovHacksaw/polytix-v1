@@ -1,7 +1,9 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { CardFooter } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import { CardFooter } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, CheckCircle, Loader2 } from "lucide-react";
 
 export function StepNavigation({
   currentStep,
@@ -11,30 +13,75 @@ export function StepNavigation({
   isSubmitting,
   onPrevious,
   onNext,
-  contract,
-  totalSteps,
-  campaignType,
+  campaignType
 }) {
-  // Determine the total number of steps based on campaign type
-  const actualTotalSteps = totalSteps || (campaignType === "candidate" ? 4 : 5)
-
+  const maxSteps = campaignType === "proposal" ? 5 : 4;
+  
   return (
-    <CardFooter className="flex justify-between border-t border-border/40 bg-muted/30 px-6 py-4">
-      <Button variant="outline" onClick={onPrevious} disabled={isFirstStep}>
-        Previous
-      </Button>
-      <div className="text-sm text-muted-foreground">
-        Step {currentStep} of {actualTotalSteps}
+    <CardFooter className="flex justify-between border-t border-border/50 p-6 bg-muted/30">
+      <div>
+        {!isFirstStep && (
+          <Button
+            type="button"
+            variant="outline"
+            onClick={onPrevious}
+            disabled={isSubmitting}
+          >
+            <ChevronLeft className="h-4 w-4 mr-2" />
+            Previous
+          </Button>
+        )}
       </div>
+      
+      <div className="flex gap-2 items-center text-xs text-muted-foreground">
+        {Array.from({ length: maxSteps }).map((_, i) => (
+          <motion.div
+            key={i}
+            className={`w-2 h-2 rounded-full ${
+              i + 1 < currentStep
+                ? "bg-primary"
+                : i + 1 === currentStep
+                ? "bg-primary/80"
+                : "bg-muted-foreground/30"
+            }`}
+            animate={{
+              scale: i + 1 === currentStep ? [1, 1.2, 1] : 1,
+            }}
+            transition={{
+              duration: 1,
+              repeat: i + 1 === currentStep ? Infinity : 0,
+              repeatDelay: 1,
+            }}
+          />
+        ))}
+      </div>
+      
+      <div>
       {isLastStep ? (
-        <Button type="submit" disabled={!isValid || isSubmitting || !contract}>
-          {isSubmitting ? "Creating..." : "Create Campaign"}
-        </Button>
-      ) : (
-        <Button onClick={onNext} disabled={!isValid}>
-          Next
-        </Button>
-      )}
+  <Button
+    type="submit"
+    disabled={!isValid || isSubmitting}
+    className="bg-primary-gradient hover:bg-primary-gradient-hover"
+  >
+    {isSubmitting ? (
+      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+    ) : (
+      <CheckCircle className="h-4 w-4 mr-2" />
+    )}
+    Create Campaign
+  </Button>
+) : (
+  <Button
+    type="button"
+    onClick={onNext}
+    disabled={!isValid || isSubmitting}
+  >
+    Next
+    <ChevronRight className="h-4 w-4 ml-2" />
+  </Button>
+)}
+
+      </div>
     </CardFooter>
-  )
+  );
 }

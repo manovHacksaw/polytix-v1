@@ -1,45 +1,87 @@
 "use client";
 
 import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import { StepDescription } from "./StepDescription";
 import { ValidationStatus } from "./ValidationStatus";
 import { ErrorMessage } from "./ErrorMessage";
 
-export function DetailsStep({ description, onChange, error, isValid }) {
+export function DetailsStep({
+  name,
+  description,
+  onChange,
+  errors = {},
+  validations = {}
+}) {
   return (
     <>
       <StepDescription
-        currentStep={1}
-        totalSteps={4}
+        currentStep={2}
+        totalSteps={5}
         title="Campaign Details"
-        description="Provide a clear and detailed description for your voting campaign."
+        description="Provide the essential information about your voting campaign."
       />
-      <CardContent className="p-6 space-y-4">
+      <CardContent className="p-6 space-y-6">
+        {/* Campaign Name */}
+        <div className="space-y-2">
+          <div className="flex justify-between items-center">
+            <Label htmlFor="name" className="text-sm font-medium">
+              Campaign Name
+            </Label>
+            <ValidationStatus isValid={validations.name} />
+          </div>
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter campaign name (max 50 characters)"
+            value={name}
+            onChange={onChange}
+            maxLength={50}
+            required
+            className={`transition-all duration-150 ${
+              errors.name ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+              validations.name ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+            }`}
+          />
+          <ErrorMessage error={errors.name} />
+          <p className="text-xs text-muted-foreground">
+            A concise, descriptive name for your campaign (max 50 characters).
+          </p>
+        </div>
+
+        {/* Campaign Description */}
         <div className="space-y-2">
           <div className="flex justify-between items-center">
             <Label htmlFor="description" className="text-sm font-medium">
               Campaign Description
             </Label>
-            <ValidationStatus isValid={isValid} />
+            <ValidationStatus isValid={validations.description} />
           </div>
           <Textarea
             id="description"
             name="description"
-            placeholder="Describe what this campaign is about in detail. What question are voters deciding on? Minimum 10 characters."
+            placeholder="Enter campaign description (max 100 characters)"
             value={description}
             onChange={onChange}
+            maxLength={100}
             required
-            className={`min-h-32 transition-all duration-150 ${
-              error ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
-              isValid ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+            rows={4}
+            className={`transition-all duration-150 ${
+              errors.description ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+              validations.description ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
             }`}
           />
-          <ErrorMessage error={error} />
-          <p className="text-xs text-muted-foreground mt-1">
-            Clarity is key. Ensure voters understand the purpose and scope of the vote.
-          </p>
+          <ErrorMessage error={errors.description} />
+          <div className="flex justify-between items-center text-xs text-muted-foreground">
+            <span>Provide details about the purpose and context of this voting campaign.</span>
+            <span className={description.length > 90 ? "text-amber-600 font-medium" : ""}>
+              {description.length}/100
+            </span>
+          </div>
         </div>
       </CardContent>
     </>

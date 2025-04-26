@@ -5,14 +5,13 @@ import { Input } from "@/components/ui/input";
 import { CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Info } from "lucide-react";
+import { Info, Lock } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion, AnimatePresence } from "framer-motion";
 import { StepDescription } from "./StepDescription";
 import { ValidationStatus } from "./ValidationStatus";
 import { ErrorMessage } from "./ErrorMessage";
-
-
+import { Badge } from "@/components/ui/badge";
 
 export function ConfigurationStep({
   restriction,
@@ -37,45 +36,57 @@ export function ConfigurationStep({
       />
       <CardContent className="p-6 space-y-6">
         <div className="space-y-3">
-          <Label className="text-sm font-medium flex items-center">
-            Voting Restriction
-            <TooltipProvider delayDuration={100}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Info className="h-4 w-4 ml-1.5 text-muted-foreground cursor-help" />
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs" side="right">
-                  {campaignType === "candidate" ? (
-                    <p><strong>Registration Required:</strong> For candidate-based voting, registration is mandatory to ensure proper tracking of voters and candidates.</p>
-                  ) : (
-                    <>
-                      <p><strong>Open to All:</strong> Any address can vote. Simple and public.</p>
-                      <p><strong>Limited Number:</strong> Only the first 'X' voters can participate. Closes after limit is reached.</p>
-                      <p><strong>Registration Required:</strong> Voters must register before the start time. Allows for controlled participation.</p>
-                    </>
-                  )}
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </Label>
-          <Select 
-            value={campaignType === "candidate" ? "2" : restriction} 
-            onValueChange={onRestrictionChange}
-            disabled={campaignType === "candidate"}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select voting restriction" />
-            </SelectTrigger>
-            <SelectContent>
-              {campaignType === "proposal" && (
-                <>
-                  <SelectItem value="0">Open to All</SelectItem>
-                  <SelectItem value="1">Limited Number of Voters</SelectItem>
-                </>
-              )}
-              <SelectItem value="2">Registration Required</SelectItem>
-            </SelectContent>
-          </Select>
+          <div className="flex justify-between items-center">
+            <Label className="text-sm font-medium flex items-center">
+              Voting Restriction
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Info className="h-4 w-4 ml-1.5 text-muted-foreground cursor-help" />
+                  </TooltipTrigger>
+                  <TooltipContent className="max-w-xs" side="right">
+                    {campaignType === "candidate" ? (
+                      <p><strong>Registration Required:</strong> For candidate-based voting, registration is mandatory to ensure proper tracking of voters and candidates.</p>
+                    ) : (
+                      <>
+                        <p><strong>Open to All:</strong> Any address can vote. Simple and public.</p>
+                        <p><strong>Limited Number:</strong> Only the first 'X' voters can participate. Closes after limit is reached.</p>
+                        <p><strong>Registration Required:</strong> Voters must register before the start time. Allows for controlled participation.</p>
+                      </>
+                    )}
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </Label>
+            {campaignType === "candidate" && (
+              <Badge variant="outline" className="flex items-center gap-1 text-xs py-1 px-2 bg-muted">
+                <Lock className="h-3 w-3" /> Required for Candidate-Based
+              </Badge>
+            )}
+          </div>
+          
+          {campaignType === "candidate" ? (
+            <div className="flex items-center space-x-2 p-3 border border-dashed rounded-md bg-muted/30">
+              <Lock className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">Registration Required</span>
+              <span className="text-xs text-muted-foreground ml-auto">Fixed for candidate-based campaigns</span>
+            </div>
+          ) : (
+            <Select 
+              value={restriction} 
+              onValueChange={onRestrictionChange}
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select voting restriction" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="0">Open to All</SelectItem>
+                <SelectItem value="1">Limited Number of Voters</SelectItem>
+                <SelectItem value="2">Registration Required</SelectItem>
+              </SelectContent>
+            </Select>
+          )}
+          
           {campaignType === "candidate" && (
             <p className="text-xs text-muted-foreground mt-1">
               Registration is mandatory for candidate-based voting to ensure proper tracking of voters and candidates.
@@ -84,7 +95,7 @@ export function ConfigurationStep({
         </div>
 
         <AnimatePresence>
-          {(restriction === "1" || restriction === "2") && (
+          {(restriction === "1" && campaignType === "proposal") && (
             <motion.div
               initial={{ opacity: 0, height: 0, marginTop: 0 }}
               animate={{ opacity: 1, height: "auto", marginTop: '1.5rem' }}
@@ -92,66 +103,72 @@ export function ConfigurationStep({
               transition={{ duration: 0.2 }}
               className="space-y-4 overflow-hidden"
             >
-              {restriction === "1" && (
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <Label htmlFor="maxVoters" className="text-sm font-medium">
-                      Max Voters Limit
-                    </Label>
-                    <ValidationStatus isValid={isValid} />
-                  </div>
-                  <Input
-                    id="maxVoters"
-                    name="maxVoters"
-                    type="number"
-                    min="1"
-                    step="1"
-                    placeholder="Enter max voter count (e.g., 100)"
-                    value={maxVoters}
-                    onChange={onMaxVotersChange}
-                    required
-                    className={`transition-all duration-150 ${
-                      error ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
-                      isValid ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
-                    }`}
-                  />
-                  <ErrorMessage error={error} />
-                  <p className="text-xs text-muted-foreground">
-                    The campaign will close to new voters once this number is reached.
-                  </p>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <Label htmlFor="maxVoters" className="text-sm font-medium">
+                    Max Voters Limit
+                  </Label>
+                  <ValidationStatus isValid={isValid} />
                 </div>
-              )}
+                <Input
+                  id="maxVoters"
+                  name="maxVoters"
+                  type="number"
+                  min="1"
+                  step="1"
+                  placeholder="Enter max voter count (e.g., 100)"
+                  value={maxVoters}
+                  onChange={onMaxVotersChange}
+                  required
+                  className={`transition-all duration-150 ${
+                    error ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+                    isValid ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+                  }`}
+                />
+                <ErrorMessage error={error} />
+                <p className="text-xs text-muted-foreground">
+                  The campaign will close to new voters once this number is reached.
+                </p>
+              </div>
+            </motion.div>
+          )}
 
-              {restriction === "2" && (
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <Label htmlFor="passKey" className="text-sm font-medium">
-                      Registration Passkey
-                    </Label>
-                    <ValidationStatus isValid={isValid} />
-                  </div>
-                  <Input
-                    id="passKey"
-                    name="passKey"
-                    type="text"
-                    placeholder="Enter passkey for registration"
-                    value={passKey}
-                    onChange={onPassKeyChange}
-                    required
-                    className={`transition-all duration-150 ${
-                      error ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
-                      isValid ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
-                    }`}
-                  />
-                  <ErrorMessage error={error} />
-                  <p className="text-xs text-muted-foreground">
-                    {campaignType === "candidate" 
-                      ? "This passkey will be required for both candidates and voters to register. Share it securely with all intended participants."
-                      : "This passkey will be required for voters to register. Keep it secure and share it only with intended participants."
-                    }
-                  </p>
+          {(restriction === "2" || campaignType === "candidate") && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, marginTop: 0 }}
+              animate={{ opacity: 1, height: "auto", marginTop: '1.5rem' }}
+              exit={{ opacity: 0, height: 0, marginTop: 0 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-4 overflow-hidden"
+            >
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <Label htmlFor="passKey" className="text-sm font-medium">
+                    Registration Passkey
+                  </Label>
+                  <ValidationStatus isValid={isValid} />
                 </div>
-              )}
+                <Input
+                  id="passKey"
+                  name="passKey"
+                  type="text"
+                  placeholder="Enter passkey for registration"
+                  value={passKey}
+                  onChange={onPassKeyChange}
+                  required
+                  className={`transition-all duration-150 ${
+                    error ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+                    isValid ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+                  }`}
+                />
+                <ErrorMessage error={error} />
+                <p className="text-xs text-muted-foreground">
+                  {campaignType === "candidate" 
+                    ? "This passkey will be required for both candidates and voters to register. Share it securely with all intended participants."
+                    : "This passkey will be required for voters to register. Keep it secure and share it only with intended participants."
+                  }
+                </p>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

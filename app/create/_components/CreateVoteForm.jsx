@@ -21,59 +21,10 @@ export default function CreateVoteForm() {
   const { contract } = useContract()
   const router = useRouter()
   const { events, refetchEvents, loading } = useSubgraph()
-  
-
-  const calculateStats = () => {
-    if (!events?.campaignsCreated) return;
-
-    const now = Math.floor(Date.now() / 1000); // Current timestamp in seconds
-    
-    // Get all unique campaign IDs
-    const campaignIds = new Set(events.campaignsCreated.map(campaign => campaign.campaignId));
-    const total = campaignIds.size;
-    
-    // Filter campaigns by status
-    let active = 0;
-    let upcoming = 0;
-    let ended = 0;
-
-    events.campaignsCreated.forEach(campaign => {
-      const startTime = parseInt(campaign.startTime);
-      const endTime = parseInt(campaign.endTime);
-      
-      if (now < startTime) {
-        upcoming++;
-      } else if (now > endTime) {
-        ended++;
-      } else {
-        active++;
-      }
-    });
-
-    // Also check for campaigns with changed status
-    if (events.campaignStatusChanstatsged) {
-      events.campaignStatusChanged.forEach(statusChange => {
-        // Status 2 typically means ended or cancelled
-        if (parseInt(statusChange.status) === 2) {
-          // Decrease active count and increase ended count if this was an active campaign
-          const campaign = events.campaignsCreated.find(c => c.campaignId === statusChange.campaignId);
-          if (campaign) {
-            const startTime = parseInt(campaign.startTime);
-            const endTime = parseInt(campaign.endTime);
-            if (now >= startTime && now <= endTime) {
-              active--;
-              ended++;
-            }
-          }
-        }
-      });
-    }
-
-    
-  };
 
   const [formData, setFormData] = useState({
     campaignType: "proposal",
+    name: "",
     description: "",
     restriction: "0",
     resultType: "0",
@@ -85,6 +36,7 @@ export default function CreateVoteForm() {
   })
 
   const [errors, setErrors] = useState({
+    name: "",
     description: "",
     startTime: "",
     endTime: "",
@@ -95,6 +47,7 @@ export default function CreateVoteForm() {
 
   const [validations, setValidations] = useState({
     campaignType: true,
+    name: false,
     description: false,
     startTime: false,
     endTime: false,
@@ -106,6 +59,16 @@ export default function CreateVoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [currentStep, setCurrentStep] = useState(1)
 
+  // Effect to update restriction to "2" (registration required) when campaign type is "candidate"
+  useEffect(() => {
+    if (formData.campaignType === "candidate") {
+      setFormData(prev => ({
+        ...prev,
+        restriction: "2" // Force registration required for candidate-based campaigns
+      }));
+    }
+  }, [formData.campaignType]);
+
   useEffect(() => {
     validateForm()
   }, [formData])
@@ -114,12 +77,27 @@ export default function CreateVoteForm() {
     const newErrors = { ...errors }
     const newValidations = { ...validations }
 
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Campaign name is required"
+      newValidations.name = false
+    } else if (formData.name.length > 50) {
+      newErrors.name = "Campaign name must be at most 50 characters"
+      newValidations.name = false
+    } else {
+      newErrors.name = ""
+      newValidations.name = true
+    }
+
     // Description validation
     if (!formData.description.trim()) {
       newErrors.description = "Description is required"
       newValidations.description = false
     } else if (formData.description.length < 10) {
       newErrors.description = "Description must be at least 10 characters"
+      newValidations.description = false
+    } else if (formData.description.length > 100) {
+      newErrors.description = "Description must be at most 100 characters"
       newValidations.description = false
     } else {
       newErrors.description = ""
@@ -130,12 +108,24 @@ export default function CreateVoteForm() {
     const now = new Date()
     const start = new Date(formData.startTime)
     const end = new Date(formData.endTime)
+    
+    // Different start time validation based on campaign type
+    const minStartTime = new Date();
+    if (formData.campaignType === "candidate") {
+      // For candidate-based, start time must be at least 30 minutes in the future
+      minStartTime.setMinutes(minStartTime.getMinutes() + 30);
+    } else {
+      // For proposal-based, start time must be at least 10 minutes in the future
+      minStartTime.setMinutes(minStartTime.getMinutes() + 10);
+    }
 
     if (!formData.startTime) {
       newErrors.startTime = "Start time is required"
       newValidations.startTime = false
-    } else if (start < now) {
-      newErrors.startTime = "Start time must be in the future"
+    } else if (start < minStartTime) {
+      newErrors.startTime = formData.campaignType === "candidate" 
+        ? "Start time must be at least 30 minutes in the future for candidate-based campaigns"
+        : "Start time must be at least 10 minutes in the future"
       newValidations.startTime = false
     } else {
       newErrors.startTime = ""
@@ -149,12 +139,23 @@ export default function CreateVoteForm() {
       newErrors.endTime = "End time must be after start time"
       newValidations.endTime = false
     } else {
-      newErrors.endTime = ""
-      newValidations.endTime = true
+      // Ensure minimum duration between start and end time
+      const minDuration = 30; // 30 minutes minimum duration
+      const durationMs = end.getTime() - start.getTime();
+      const durationMinutes = durationMs / (1000 * 60);
+      
+      if (durationMinutes < minDuration) {
+        newErrors.endTime = `Voting period must be at least ${minDuration} minutes long`
+        newValidations.endTime = false
+      } else {
+        newErrors.endTime = ""
+        newValidations.endTime = true
+      }
     }
 
-    // Max voters validation
-    if (formData.restriction === "1" && (!formData.maxVoters || Number.parseInt(formData.maxVoters) <= 0)) {
+    // Max voters validation - only required for proposal-based campaigns with restriction "1"
+    if (formData.campaignType === "proposal" && formData.restriction === "1" && 
+        (!formData.maxVoters || Number.parseInt(formData.maxVoters) <= 0)) {
       newErrors.maxVoters = "Maximum voters must be greater than 0"
       newValidations.maxVoters = false
     } else {
@@ -162,8 +163,9 @@ export default function CreateVoteForm() {
       newValidations.maxVoters = true
     }
 
-    // PassKey validation for registration-based campaigns
-    if (formData.restriction === "2" && !formData.passKey.trim()) {
+    // PassKey validation for registration-based campaigns (always for candidate-based)
+    if ((formData.campaignType === "candidate" || formData.restriction === "2") && 
+        !formData.passKey.trim()) {
       newErrors.passKey = "Passkey is required for registration-based campaigns"
       newValidations.passKey = false
     } else {
@@ -268,6 +270,7 @@ export default function CreateVoteForm() {
       if (formData.campaignType === "proposal") {
         // Use createProposalBasedCampaign from the contract
         tx = await contract.createProposalBasedCampaign(
+          formData.name,
           formData.description,
           Number.parseInt(formData.restriction),
           Number.parseInt(formData.resultType),
@@ -280,6 +283,7 @@ export default function CreateVoteForm() {
       } else {
         // Use createCandidateBasedCampaign from the contract
         tx = await contract.createCandidateBasedCampaign(
+          formData.name,
           formData.description,
           Number.parseInt(formData.restriction),
           Number.parseInt(formData.resultType),
@@ -322,6 +326,7 @@ export default function CreateVoteForm() {
       // Reset form after successful submission
       setFormData({
         campaignType: "proposal",
+        name: "",
         description: "",
         restriction: "0",
         resultType: "0",
@@ -404,16 +409,23 @@ export default function CreateVoteForm() {
               <motion.div key="step2" {...fadeIn} transition={{ duration: 0.3 }}>
                 <Card className="border border-border/50 shadow-sm overflow-hidden">
                   <DetailsStep
+                    name={formData.name}
                     description={formData.description}
                     onChange={handleChange}
-                    error={errors.description}
-                    isValid={validations.description}
+                    errors={{
+                      name: errors.name,
+                      description: errors.description
+                    }}
+                    validations={{
+                      name: validations.name,
+                      description: validations.description
+                    }}
                   />
                   <StepNavigation
                     currentStep={currentStep}
                     isFirstStep={false}
                     isLastStep={false}
-                    isValid={validations.description}
+                    isValid={validations.name && validations.description}
                     isSubmitting={isSubmitting}
                     onPrevious={prevStep}
                     onNext={nextStep}
@@ -437,6 +449,7 @@ export default function CreateVoteForm() {
                     onPassKeyChange={handleChange}
                     error={errors.maxVoters || errors.passKey}
                     isValid={validations.maxVoters && validations.passKey}
+                    campaignType={formData.campaignType}
                   />
                   <StepNavigation
                     currentStep={currentStep}
@@ -467,6 +480,7 @@ export default function CreateVoteForm() {
                       startTime: validations.startTime,
                       endTime: validations.endTime,
                     }}
+                    campaignType={formData.campaignType}
                   />
                   <StepNavigation
                     currentStep={currentStep}
@@ -476,7 +490,6 @@ export default function CreateVoteForm() {
                     isSubmitting={isSubmitting}
                     onPrevious={prevStep}
                     onNext={nextStep}
-                    contract={contract}
                     campaignType={formData.campaignType}
                   />
                 </Card>
@@ -503,7 +516,6 @@ export default function CreateVoteForm() {
                     isSubmitting={isSubmitting}
                     onPrevious={prevStep}
                     onNext={nextStep}
-                    contract={contract}
                     campaignType={formData.campaignType}
                   />
                 </Card>

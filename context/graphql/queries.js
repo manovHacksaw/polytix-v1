@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://api.studio.thegraph.com/query/101223/polytix/version/latest',
+  uri: 'https://api.studio.thegraph.com/query/101223/polytix/v1.0',
   cache: new InMemoryCache(),
 });
 

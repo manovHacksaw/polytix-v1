@@ -8,20 +8,26 @@ import { format } from "date-fns";
 import { StepDescription } from "./StepDescription";
 import { ValidationStatus } from "./ValidationStatus";
 import { ErrorMessage } from "./ErrorMessage";
-
-
+import { Circle as InfoCircle } from "lucide-react";
 
 export function TimeFrameStep({
   startTime,
   endTime,
   onChange,
   errors,
-  validations
+  validations,
+  campaignType = "proposal"
 }) {
-  // Calculate minimum start time (current time + 10 minutes as per contract logic)
+  // Calculate minimum start time based on campaign type
   const calculateMinStartTime = () => {
     const minStart = new Date();
-    minStart.setMinutes(minStart.getMinutes() + 10);
+    if (campaignType === "candidate") {
+      // For candidate-based, must be at least 30 minutes in the future
+      minStart.setMinutes(minStart.getMinutes() + 30);
+    } else {
+      // For proposal-based, must be at least 10 minutes in the future
+      minStart.setMinutes(minStart.getMinutes() + 10);
+    }
     return format(minStart, "yyyy-MM-dd'T'HH:mm");
   };
 
@@ -45,6 +51,20 @@ export function TimeFrameStep({
         description="Specify the exact start and end date/time for the voting period."
       />
       <CardContent className="p-6 space-y-6">
+        {campaignType === "candidate" && (
+          <div className="rounded-lg border border-amber-200 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-900 p-3 mb-4">
+            <div className="flex gap-2">
+              <InfoCircle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+              <div className="text-amber-800 dark:text-amber-300 text-sm">
+                <p className="font-medium">Candidate Registration Period</p>
+                <p className="mt-1">
+                  For candidate-based campaigns, voting can only start at least 30 minutes after creation to allow time for candidates to register.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Start Time */}
           <div className="space-y-2">
@@ -69,7 +89,10 @@ export function TimeFrameStep({
             />
             <ErrorMessage error={errors.startTime} />
             <p className="text-xs text-muted-foreground">
-              Must be at least 10 minutes from now due to blockchain constraints.
+              {campaignType === "candidate" 
+                ? "Must be at least 30 minutes from now to allow for candidate registration"
+                : "Must be at least 10 minutes from now due to blockchain constraints"
+              }
             </p>
           </div>
 

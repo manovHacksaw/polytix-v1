@@ -1070,6 +1070,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/select.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$radio$2d$group$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/radio-group.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$info$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Info$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/info.js [app-client] (ecmascript) <export default as Info>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/lock.js [app-client] (ecmascript) <export default as Lock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/tooltip.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
@@ -1099,7 +1100,7 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                 description: "Define who can vote and how the results will be determined."
             }, void 0, false, {
                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                lineNumber: 32,
+                lineNumber: 30,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1108,124 +1109,181 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-3",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                className: "text-sm font-medium flex items-center",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-between items-center",
                                 children: [
-                                    "Voting Restriction",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipProvider"], {
-                                        delayDuration: 100,
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipTrigger"], {
-                                                    asChild: true,
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$info$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Info$3e$__["Info"], {
-                                                        className: "h-4 w-4 ml-1.5 text-muted-foreground cursor-help"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                        lineNumber: 45,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 44,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipContent"], {
-                                                    className: "max-w-xs",
-                                                    side: "right",
-                                                    children: campaignType === "candidate" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                children: "Registration Required:"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                        className: "text-sm font-medium flex items-center",
+                                        children: [
+                                            "Voting Restriction",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipProvider"], {
+                                                delayDuration: 100,
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipTrigger"], {
+                                                            asChild: true,
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$info$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Info$3e$__["Info"], {
+                                                                className: "h-4 w-4 ml-1.5 text-muted-foreground cursor-help"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                lineNumber: 49,
-                                                                columnNumber: 24
-                                                            }, this),
-                                                            " For candidate-based voting, registration is mandatory to ensure proper tracking of voters and candidates."
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                        lineNumber: 49,
-                                                        columnNumber: 21
-                                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                        children: "Open to All:"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                        lineNumber: 52,
-                                                                        columnNumber: 26
-                                                                    }, this),
-                                                                    " Any address can vote. Simple and public."
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                lineNumber: 52,
-                                                                columnNumber: 23
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                        children: "Limited Number:"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                        lineNumber: 53,
-                                                                        columnNumber: 26
-                                                                    }, this),
-                                                                    " Only the first 'X' voters can participate. Closes after limit is reached."
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                lineNumber: 53,
-                                                                columnNumber: 23
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                lineNumber: 44,
+                                                                columnNumber: 21
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                            lineNumber: 43,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipContent"], {
+                                                            className: "max-w-xs",
+                                                            side: "right",
+                                                            children: campaignType === "candidate" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                                         children: "Registration Required:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                        lineNumber: 54,
+                                                                        lineNumber: 48,
                                                                         columnNumber: 26
                                                                     }, this),
-                                                                    " Voters must register before the start time. Allows for controlled participation."
+                                                                    " For candidate-based voting, registration is mandatory to ensure proper tracking of voters and candidates."
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                lineNumber: 54,
+                                                                lineNumber: 48,
                                                                 columnNumber: 23
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true)
-                                                }, void 0, false, {
+                                                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                                                children: "Open to All:"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                                                lineNumber: 51,
+                                                                                columnNumber: 28
+                                                                            }, this),
+                                                                            " Any address can vote. Simple and public."
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                                        lineNumber: 51,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                                                children: "Limited Number:"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                                                lineNumber: 52,
+                                                                                columnNumber: 28
+                                                                            }, this),
+                                                                            " Only the first 'X' voters can participate. Closes after limit is reached."
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                                        lineNumber: 52,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                                                children: "Registration Required:"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                                                lineNumber: 53,
+                                                                                columnNumber: 28
+                                                                            }, this),
+                                                                            " Voters must register before the start time. Allows for controlled participation."
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                                        lineNumber: 53,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                            lineNumber: 46,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 47,
+                                                    lineNumber: 42,
                                                     columnNumber: 17
                                                 }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 43,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                lineNumber: 41,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                        lineNumber: 42,
+                                        lineNumber: 39,
                                         columnNumber: 13
+                                    }, this),
+                                    campaignType === "candidate" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Badge, {
+                                        variant: "outline",
+                                        className: "flex items-center gap-1 text-xs py-1 px-2 bg-muted",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__["Lock"], {
+                                                className: "h-3 w-3"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                lineNumber: 62,
+                                                columnNumber: 17
+                                            }, this),
+                                            " Required for Candidate-Based"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                        lineNumber: 61,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                lineNumber: 40,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
-                                value: campaignType === "candidate" ? "2" : restriction,
+                            campaignType === "candidate" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center space-x-2 p-3 border border-dashed rounded-md bg-muted/30",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__["Lock"], {
+                                        className: "h-4 w-4 text-muted-foreground"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                        lineNumber: 69,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-sm font-medium",
+                                        children: "Registration Required"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                        lineNumber: 70,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xs text-muted-foreground ml-auto",
+                                        children: "Fixed for candidate-based campaigns"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                        lineNumber: 71,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                lineNumber: 68,
+                                columnNumber: 13
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
+                                value: restriction,
                                 onValueChange: onRestrictionChange,
-                                disabled: campaignType === "candidate",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
                                         className: "w-full",
@@ -1233,93 +1291,89 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                             placeholder: "Select voting restriction"
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 67,
-                                            columnNumber: 15
+                                            lineNumber: 79,
+                                            columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                        lineNumber: 66,
-                                        columnNumber: 13
+                                        lineNumber: 78,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
                                         children: [
-                                            campaignType === "proposal" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
-                                                        value: "0",
-                                                        children: "Open to All"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                        lineNumber: 72,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
-                                                        value: "1",
-                                                        children: "Limited Number of Voters"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                        lineNumber: 73,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                value: "0",
+                                                children: "Open to All"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                lineNumber: 82,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                value: "1",
+                                                children: "Limited Number of Voters"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                                lineNumber: 83,
+                                                columnNumber: 17
+                                            }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
                                                 value: "2",
                                                 children: "Registration Required"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                lineNumber: 76,
-                                                columnNumber: 15
+                                                lineNumber: 84,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                        lineNumber: 69,
-                                        columnNumber: 13
+                                        lineNumber: 81,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                lineNumber: 61,
-                                columnNumber: 11
+                                lineNumber: 74,
+                                columnNumber: 13
                             }, this),
                             campaignType === "candidate" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-xs text-muted-foreground mt-1",
                                 children: "Registration is mandatory for candidate-based voting to ensure proper tracking of voters and candidates."
                             }, void 0, false, {
                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                lineNumber: 80,
+                                lineNumber: 90,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                        lineNumber: 39,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                        children: (restriction === "1" || restriction === "2") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                            initial: {
-                                opacity: 0,
-                                height: 0,
-                                marginTop: 0
-                            },
-                            animate: {
-                                opacity: 1,
-                                height: "auto",
-                                marginTop: '1.5rem'
-                            },
-                            exit: {
-                                opacity: 0,
-                                height: 0,
-                                marginTop: 0
-                            },
-                            transition: {
-                                duration: 0.2
-                            },
-                            className: "space-y-4 overflow-hidden",
-                            children: [
-                                restriction === "1" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            restriction === "1" && campaignType === "proposal" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                initial: {
+                                    opacity: 0,
+                                    height: 0,
+                                    marginTop: 0
+                                },
+                                animate: {
+                                    opacity: 1,
+                                    height: "auto",
+                                    marginTop: '1.5rem'
+                                },
+                                exit: {
+                                    opacity: 0,
+                                    height: 0,
+                                    marginTop: 0
+                                },
+                                transition: {
+                                    duration: 0.2
+                                },
+                                className: "space-y-4 overflow-hidden",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1331,21 +1385,21 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                     children: "Max Voters Limit"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 98,
-                                                    columnNumber: 21
+                                                    lineNumber: 107,
+                                                    columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ValidationStatus$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ValidationStatus"], {
                                                     isValid: isValid
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 101,
-                                                    columnNumber: 21
+                                                    lineNumber: 110,
+                                                    columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 97,
-                                            columnNumber: 19
+                                            lineNumber: 106,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                             id: "maxVoters",
@@ -1360,31 +1414,56 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                             className: `transition-all duration-150 ${error ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : isValid ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"}`
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 103,
-                                            columnNumber: 19
+                                            lineNumber: 112,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ErrorMessage$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ErrorMessage"], {
                                             error: error
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 118,
-                                            columnNumber: 19
+                                            lineNumber: 127,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-xs text-muted-foreground",
                                             children: "The campaign will close to new voters once this number is reached."
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 119,
-                                            columnNumber: 19
+                                            lineNumber: 128,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                    lineNumber: 96,
-                                    columnNumber: 17
-                                }, this),
-                                restriction === "2" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    lineNumber: 105,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                lineNumber: 98,
+                                columnNumber: 13
+                            }, this),
+                            (restriction === "2" || campaignType === "candidate") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                initial: {
+                                    opacity: 0,
+                                    height: 0,
+                                    marginTop: 0
+                                },
+                                animate: {
+                                    opacity: 1,
+                                    height: "auto",
+                                    marginTop: '1.5rem'
+                                },
+                                exit: {
+                                    opacity: 0,
+                                    height: 0,
+                                    marginTop: 0
+                                },
+                                transition: {
+                                    duration: 0.2
+                                },
+                                className: "space-y-4 overflow-hidden",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1396,21 +1475,21 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                     children: "Registration Passkey"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 128,
-                                                    columnNumber: 21
+                                                    lineNumber: 145,
+                                                    columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ValidationStatus$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ValidationStatus"], {
                                                     isValid: isValid
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 131,
-                                                    columnNumber: 21
+                                                    lineNumber: 148,
+                                                    columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 127,
-                                            columnNumber: 19
+                                            lineNumber: 144,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                             id: "passKey",
@@ -1423,39 +1502,39 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                             className: `transition-all duration-150 ${error ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : isValid ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"}`
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 133,
-                                            columnNumber: 19
+                                            lineNumber: 150,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ErrorMessage$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ErrorMessage"], {
                                             error: error
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 146,
-                                            columnNumber: 19
+                                            lineNumber: 163,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-xs text-muted-foreground",
                                             children: campaignType === "candidate" ? "This passkey will be required for both candidates and voters to register. Share it securely with all intended participants." : "This passkey will be required for voters to register. Keep it secure and share it only with intended participants."
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 147,
-                                            columnNumber: 19
+                                            lineNumber: 164,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                    lineNumber: 126,
-                                    columnNumber: 17
+                                    lineNumber: 143,
+                                    columnNumber: 15
                                 }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                            lineNumber: 88,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
+                            }, void 0, false, {
+                                fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
+                                lineNumber: 136,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                        lineNumber: 86,
+                        lineNumber: 96,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1475,12 +1554,12 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                         className: "h-4 w-4 ml-1.5 text-muted-foreground cursor-help"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                        lineNumber: 165,
+                                                        lineNumber: 181,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 180,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -1493,7 +1572,7 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                                     children: "Rank Based:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                    lineNumber: 168,
+                                                                    lineNumber: 184,
                                                                     columnNumber: 22
                                                                 }, this),
                                                                 " Shows all ",
@@ -1502,7 +1581,7 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                            lineNumber: 168,
+                                                            lineNumber: 184,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1511,7 +1590,7 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                                     children: "One Winner:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                                    lineNumber: 169,
+                                                                    lineNumber: 185,
                                                                     columnNumber: 22
                                                                 }, this),
                                                                 " Declares only the single ",
@@ -1520,30 +1599,30 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                            lineNumber: 169,
+                                                            lineNumber: 185,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 183,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                            lineNumber: 163,
+                                            lineNumber: 179,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                        lineNumber: 162,
+                                        lineNumber: 178,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                lineNumber: 160,
+                                lineNumber: 176,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$radio$2d$group$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -1559,7 +1638,7 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                 id: "rank-based"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                lineNumber: 180,
+                                                lineNumber: 196,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1568,13 +1647,13 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                 children: "Rank Based"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                lineNumber: 181,
+                                                lineNumber: 197,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                        lineNumber: 179,
+                                        lineNumber: 195,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1585,7 +1664,7 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                 id: "one-winner"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                lineNumber: 184,
+                                                lineNumber: 200,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1594,31 +1673,31 @@ function ConfigurationStep({ restriction, resultType, maxVoters, passKey, onRest
                                                 children: "One Winner"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                                lineNumber: 185,
+                                                lineNumber: 201,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                        lineNumber: 183,
+                                        lineNumber: 199,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                                lineNumber: 174,
+                                lineNumber: 190,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                        lineNumber: 159,
+                        lineNumber: 175,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/create/_components/ConfigurationStep.jsx",
-                lineNumber: 38,
+                lineNumber: 36,
                 columnNumber: 7
             }, this)
         ]
@@ -2640,48 +2719,9 @@ function CreateVoteForm() {
     const { contract } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$contract$2d$context$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContract"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const { events, refetchEvents, loading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$graphql$2f$queries$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSubgraph"])();
-    const calculateStats = ()=>{
-        if (!events?.campaignsCreated) return;
-        const now = Math.floor(Date.now() / 1000); // Current timestamp in seconds
-        // Get all unique campaign IDs
-        const campaignIds = new Set(events.campaignsCreated.map((campaign)=>campaign.campaignId));
-        const total = campaignIds.size;
-        // Filter campaigns by status
-        let active = 0;
-        let upcoming = 0;
-        let ended = 0;
-        events.campaignsCreated.forEach((campaign)=>{
-            const startTime = parseInt(campaign.startTime);
-            const endTime = parseInt(campaign.endTime);
-            if (now < startTime) {
-                upcoming++;
-            } else if (now > endTime) {
-                ended++;
-            } else {
-                active++;
-            }
-        });
-        // Also check for campaigns with changed status
-        if (events.campaignStatusChanstatsged) {
-            events.campaignStatusChanged.forEach((statusChange)=>{
-                // Status 2 typically means ended or cancelled
-                if (parseInt(statusChange.status) === 2) {
-                    // Decrease active count and increase ended count if this was an active campaign
-                    const campaign = events.campaignsCreated.find((c)=>c.campaignId === statusChange.campaignId);
-                    if (campaign) {
-                        const startTime = parseInt(campaign.startTime);
-                        const endTime = parseInt(campaign.endTime);
-                        if (now >= startTime && now <= endTime) {
-                            active--;
-                            ended++;
-                        }
-                    }
-                }
-            });
-        }
-    };
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         campaignType: "proposal",
+        name: "",
         description: "",
         restriction: "0",
         resultType: "0",
@@ -2695,6 +2735,7 @@ function CreateVoteForm() {
         ]
     });
     const [errors, setErrors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        name: "",
         description: "",
         startTime: "",
         endTime: "",
@@ -2704,6 +2745,7 @@ function CreateVoteForm() {
     });
     const [validations, setValidations] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         campaignType: true,
+        name: false,
         description: false,
         startTime: false,
         endTime: false,
@@ -2713,6 +2755,21 @@ function CreateVoteForm() {
     });
     const [isSubmitting, setIsSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [currentStep, setCurrentStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
+    // Effect to update restriction to "2" (registration required) when campaign type is "candidate"
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CreateVoteForm.useEffect": ()=>{
+            if (formData.campaignType === "candidate") {
+                setFormData({
+                    "CreateVoteForm.useEffect": (prev)=>({
+                            ...prev,
+                            restriction: "2" // Force registration required for candidate-based campaigns
+                        })
+                }["CreateVoteForm.useEffect"]);
+            }
+        }
+    }["CreateVoteForm.useEffect"], [
+        formData.campaignType
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CreateVoteForm.useEffect": ()=>{
             validateForm();
@@ -2727,12 +2784,26 @@ function CreateVoteForm() {
         const newValidations = {
             ...validations
         };
+        // Name validation
+        if (!formData.name.trim()) {
+            newErrors.name = "Campaign name is required";
+            newValidations.name = false;
+        } else if (formData.name.length > 50) {
+            newErrors.name = "Campaign name must be at most 50 characters";
+            newValidations.name = false;
+        } else {
+            newErrors.name = "";
+            newValidations.name = true;
+        }
         // Description validation
         if (!formData.description.trim()) {
             newErrors.description = "Description is required";
             newValidations.description = false;
         } else if (formData.description.length < 10) {
             newErrors.description = "Description must be at least 10 characters";
+            newValidations.description = false;
+        } else if (formData.description.length > 100) {
+            newErrors.description = "Description must be at most 100 characters";
             newValidations.description = false;
         } else {
             newErrors.description = "";
@@ -2742,11 +2813,20 @@ function CreateVoteForm() {
         const now = new Date();
         const start = new Date(formData.startTime);
         const end = new Date(formData.endTime);
+        // Different start time validation based on campaign type
+        const minStartTime = new Date();
+        if (formData.campaignType === "candidate") {
+            // For candidate-based, start time must be at least 30 minutes in the future
+            minStartTime.setMinutes(minStartTime.getMinutes() + 30);
+        } else {
+            // For proposal-based, start time must be at least 10 minutes in the future
+            minStartTime.setMinutes(minStartTime.getMinutes() + 10);
+        }
         if (!formData.startTime) {
             newErrors.startTime = "Start time is required";
             newValidations.startTime = false;
-        } else if (start < now) {
-            newErrors.startTime = "Start time must be in the future";
+        } else if (start < minStartTime) {
+            newErrors.startTime = formData.campaignType === "candidate" ? "Start time must be at least 30 minutes in the future for candidate-based campaigns" : "Start time must be at least 10 minutes in the future";
             newValidations.startTime = false;
         } else {
             newErrors.startTime = "";
@@ -2759,19 +2839,28 @@ function CreateVoteForm() {
             newErrors.endTime = "End time must be after start time";
             newValidations.endTime = false;
         } else {
-            newErrors.endTime = "";
-            newValidations.endTime = true;
+            // Ensure minimum duration between start and end time
+            const minDuration = 30; // 30 minutes minimum duration
+            const durationMs = end.getTime() - start.getTime();
+            const durationMinutes = durationMs / (1000 * 60);
+            if (durationMinutes < minDuration) {
+                newErrors.endTime = `Voting period must be at least ${minDuration} minutes long`;
+                newValidations.endTime = false;
+            } else {
+                newErrors.endTime = "";
+                newValidations.endTime = true;
+            }
         }
-        // Max voters validation
-        if (formData.restriction === "1" && (!formData.maxVoters || Number.parseInt(formData.maxVoters) <= 0)) {
+        // Max voters validation - only required for proposal-based campaigns with restriction "1"
+        if (formData.campaignType === "proposal" && formData.restriction === "1" && (!formData.maxVoters || Number.parseInt(formData.maxVoters) <= 0)) {
             newErrors.maxVoters = "Maximum voters must be greater than 0";
             newValidations.maxVoters = false;
         } else {
             newErrors.maxVoters = "";
             newValidations.maxVoters = true;
         }
-        // PassKey validation for registration-based campaigns
-        if (formData.restriction === "2" && !formData.passKey.trim()) {
+        // PassKey validation for registration-based campaigns (always for candidate-based)
+        if ((formData.campaignType === "candidate" || formData.restriction === "2") && !formData.passKey.trim()) {
             newErrors.passKey = "Passkey is required for registration-based campaigns";
             newValidations.passKey = false;
         } else {
@@ -2865,10 +2954,10 @@ function CreateVoteForm() {
             let campaignId;
             if (formData.campaignType === "proposal") {
                 // Use createProposalBasedCampaign from the contract
-                tx = await contract.createProposalBasedCampaign(formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "", formData.proposals.filter((p)=>p.trim().length > 0));
+                tx = await contract.createProposalBasedCampaign(formData.name, formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "", formData.proposals.filter((p)=>p.trim().length > 0));
             } else {
                 // Use createCandidateBasedCampaign from the contract
-                tx = await contract.createCandidateBasedCampaign(formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "");
+                tx = await contract.createCandidateBasedCampaign(formData.name, formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "");
             }
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].promise(tx.wait(), {
                 loading: "Creating voting campaign...",
@@ -2896,6 +2985,7 @@ function CreateVoteForm() {
             // Reset form after successful submission
             setFormData({
                 campaignType: "proposal",
+                name: "",
                 description: "",
                 restriction: "0",
                 resultType: "0",
@@ -2953,7 +3043,7 @@ function CreateVoteForm() {
                             className: "h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5"
                         }, void 0, false, {
                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                            lineNumber: 361,
+                            lineNumber: 366,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDescription"], {
@@ -2964,7 +3054,7 @@ function CreateVoteForm() {
                                     children: "Ensure sufficient MATIC for gas fees."
                                 }, void 0, false, {
                                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                    lineNumber: 363,
+                                    lineNumber: 368,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2980,7 +3070,7 @@ function CreateVoteForm() {
                                             children: "Polygon Faucet"
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 367,
+                                            lineNumber: 372,
                                             columnNumber: 15
                                         }, this),
                                         " ",
@@ -2988,19 +3078,19 @@ function CreateVoteForm() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                    lineNumber: 364,
+                                    lineNumber: 369,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                            lineNumber: 362,
+                            lineNumber: 367,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                    lineNumber: 360,
+                    lineNumber: 365,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -3022,7 +3112,7 @@ function CreateVoteForm() {
                                             onChange: (value)=>handleSelectChange("campaignType", value)
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 385,
+                                            lineNumber: 390,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$StepNavigation$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["StepNavigation"], {
@@ -3036,18 +3126,18 @@ function CreateVoteForm() {
                                             campaignType: formData.campaignType
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 389,
+                                            lineNumber: 394,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                    lineNumber: 384,
+                                    lineNumber: 389,
                                     columnNumber: 17
                                 }, this)
                             }, "step1", false, {
                                 fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                lineNumber: 383,
+                                lineNumber: 388,
                                 columnNumber: 15
                             }, this),
                             currentStep === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3059,38 +3149,45 @@ function CreateVoteForm() {
                                     className: "border border-border/50 shadow-sm overflow-hidden",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$DetailsStep$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DetailsStep"], {
+                                            name: formData.name,
                                             description: formData.description,
                                             onChange: handleChange,
-                                            error: errors.description,
-                                            isValid: validations.description
+                                            errors: {
+                                                name: errors.name,
+                                                description: errors.description
+                                            },
+                                            validations: {
+                                                name: validations.name,
+                                                description: validations.description
+                                            }
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 406,
+                                            lineNumber: 411,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$StepNavigation$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["StepNavigation"], {
                                             currentStep: currentStep,
                                             isFirstStep: false,
                                             isLastStep: false,
-                                            isValid: validations.description,
+                                            isValid: validations.name && validations.description,
                                             isSubmitting: isSubmitting,
                                             onPrevious: prevStep,
                                             onNext: nextStep,
                                             campaignType: formData.campaignType
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 412,
+                                            lineNumber: 424,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                    lineNumber: 405,
+                                    lineNumber: 410,
                                     columnNumber: 17
                                 }, this)
                             }, "step2", false, {
                                 fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                lineNumber: 404,
+                                lineNumber: 409,
                                 columnNumber: 15
                             }, this),
                             currentStep === 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3111,10 +3208,11 @@ function CreateVoteForm() {
                                             onMaxVotersChange: handleChange,
                                             onPassKeyChange: handleChange,
                                             error: errors.maxVoters || errors.passKey,
-                                            isValid: validations.maxVoters && validations.passKey
+                                            isValid: validations.maxVoters && validations.passKey,
+                                            campaignType: formData.campaignType
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 429,
+                                            lineNumber: 441,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$StepNavigation$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["StepNavigation"], {
@@ -3128,18 +3226,18 @@ function CreateVoteForm() {
                                             campaignType: formData.campaignType
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 441,
+                                            lineNumber: 454,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                    lineNumber: 428,
+                                    lineNumber: 440,
                                     columnNumber: 17
                                 }, this)
                             }, "step3", false, {
                                 fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                lineNumber: 427,
+                                lineNumber: 439,
                                 columnNumber: 15
                             }, this),
                             currentStep === 4 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3161,10 +3259,11 @@ function CreateVoteForm() {
                                             validations: {
                                                 startTime: validations.startTime,
                                                 endTime: validations.endTime
-                                            }
+                                            },
+                                            campaignType: formData.campaignType
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 458,
+                                            lineNumber: 471,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$StepNavigation$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["StepNavigation"], {
@@ -3175,22 +3274,21 @@ function CreateVoteForm() {
                                             isSubmitting: isSubmitting,
                                             onPrevious: prevStep,
                                             onNext: nextStep,
-                                            contract: contract,
                                             campaignType: formData.campaignType
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 471,
+                                            lineNumber: 485,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                    lineNumber: 457,
+                                    lineNumber: 470,
                                     columnNumber: 17
                                 }, this)
                             }, "step4", false, {
                                 fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                lineNumber: 456,
+                                lineNumber: 469,
                                 columnNumber: 15
                             }, this),
                             currentStep === 5 && formData.campaignType === "proposal" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3211,7 +3309,7 @@ function CreateVoteForm() {
                                             isSubmitting: isSubmitting
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 489,
+                                            lineNumber: 502,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$StepNavigation$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["StepNavigation"], {
@@ -3222,48 +3320,47 @@ function CreateVoteForm() {
                                             isSubmitting: isSubmitting,
                                             onPrevious: prevStep,
                                             onNext: nextStep,
-                                            contract: contract,
                                             campaignType: formData.campaignType
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                            lineNumber: 498,
+                                            lineNumber: 511,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                    lineNumber: 488,
+                                    lineNumber: 501,
                                     columnNumber: 17
                                 }, this)
                             }, "step5", false, {
                                 fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                                lineNumber: 487,
+                                lineNumber: 500,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                        lineNumber: 381,
+                        lineNumber: 386,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-                    lineNumber: 380,
+                    lineNumber: 385,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-            lineNumber: 359,
+            lineNumber: 364,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/create/_components/CreateVoteForm.jsx",
-        lineNumber: 353,
+        lineNumber: 358,
         columnNumber: 5
     }, this);
 }
-_s(CreateVoteForm, "VhFo2Q3nbu+Dvws5hJJwkslGcPE=", false, function() {
+_s(CreateVoteForm, "PdOh5X3A1DvleWD5YKp7jdj1hrw=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$contract$2d$context$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContract"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
