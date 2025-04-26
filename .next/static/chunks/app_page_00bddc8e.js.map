@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///mnt/windows_d/manov/code/polytix-v1/app/page.js"],"sourcesContent":["\"use client\"\nimport React from 'react'\nimport { toast } from 'sonner'\n\nconst page = () => {\n  return (\n    <div>\n      \n\n      \n    </div>\n  )\n}\n\nexport default page"],"names":[],"mappings":";;;;AACA;AACA;AAFA;;;;AAIA,MAAM,OAAO;IACX,qBACE,6LAAC;;;;;AAML;uCAEe","debugId":null}}]
+}
