@@ -8,8 +8,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { StepDescription } from "./StepDescription";
 
-
-
 export function CampaignTypeStep({ campaignType, onChange }) {
   return (
     <>
@@ -38,18 +36,18 @@ export function CampaignTypeStep({ campaignType, onChange }) {
           <RadioGroup
             value={campaignType}
             onValueChange={onChange}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            <div className="flex items-start space-x-3 p-4 border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
+            <div className="flex items-start space-x-3 p-4 border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer bg-card">
               <RadioGroupItem value="proposal" id="proposal" className="mt-1" />
-              <div className="space-y-1">
+              <div className="space-y-1 flex-1">
                 <Label htmlFor="proposal" className="font-medium cursor-pointer">Proposal Based</Label>
                 <p className="text-sm text-muted-foreground">Create a campaign with specific proposals for voters to choose from.</p>
               </div>
             </div>
-            <div className="flex items-start space-x-3 p-4 border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
+            <div className="flex items-start space-x-3 p-4 border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer bg-card">
               <RadioGroupItem value="candidate" id="candidate" className="mt-1" />
-              <div className="space-y-1">
+              <div className="space-y-1 flex-1">
                 <Label htmlFor="candidate" className="font-medium cursor-pointer">Candidate Based</Label>
                 <p className="text-sm text-muted-foreground">Allow candidates to register and voters to elect from registered candidates.</p>
               </div>

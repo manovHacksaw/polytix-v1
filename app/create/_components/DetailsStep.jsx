@@ -42,15 +42,18 @@ export function DetailsStep({
             onChange={onChange}
             maxLength={50}
             required
-            className={`transition-all duration-150 ${
+            className={`transition-all duration-150 w-full ${
               errors.name ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
               validations.name ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
             }`}
           />
           <ErrorMessage error={errors.name} />
-          <p className="text-xs text-muted-foreground">
-            A concise, descriptive name for your campaign (max 50 characters).
-          </p>
+          <div className="flex justify-between items-center text-xs text-muted-foreground">
+            <span>A concise, descriptive name for your campaign.</span>
+            <span className={name.length > 40 ? "text-amber-600 font-medium" : ""}>
+              {name.length}/50
+            </span>
+          </div>
         </div>
 
         {/* Campaign Description */}
@@ -64,13 +67,13 @@ export function DetailsStep({
           <Textarea
             id="description"
             name="description"
-            placeholder="Enter campaign description (max 100 characters)"
+            placeholder="Enter campaign description (10-100 characters)"
             value={description}
             onChange={onChange}
             maxLength={100}
             required
             rows={4}
-            className={`transition-all duration-150 ${
+            className={`transition-all duration-150 w-full ${
               errors.description ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
               validations.description ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
             }`}

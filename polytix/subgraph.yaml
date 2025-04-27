@@ -1,0 +1,80 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Polytix
+    network: polygon-amoy
+    source:
+      address: "0x17bad1451ABE049391c8EaBC89EF594A81907121"
+      abi: Polytix
+      startBlock: 20960294
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - BaseImageURISet
+        - CampaignCreated
+        - CampaignStatusChanged
+        - CandidateAdded
+        - CandidateImageURISet
+        - CandidateRegistered
+        - ContractPaused
+        - ContractUnpaused
+        - NFTBurned
+        - NotificationCreated
+        - Paused
+        - ProposalAdded
+        - Transfer
+        - Unpaused
+        - VoteCapReached
+        - VoteCast
+        - VoterRegistered
+      abis:
+        - name: Polytix
+          file: ./abis/Polytix.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: BaseImageURISet(string)
+          handler: handleBaseImageURISet
+        - event: CampaignCreated(indexed uint256,indexed address,uint8,uint8,uint256,uint256)
+          handler: handleCampaignCreated
+        - event: CampaignStatusChanged(indexed uint256,uint8)
+          handler: handleCampaignStatusChanged
+        - event: CandidateAdded(indexed uint256,indexed uint256,indexed address,string)
+          handler: handleCandidateAdded
+        - event: CandidateImageURISet(string)
+          handler: handleCandidateImageURISet
+        - event: CandidateRegistered(indexed uint256,indexed address,uint256)
+          handler: handleCandidateRegistered
+        - event: ContractPaused(indexed address)
+          handler: handleContractPaused
+        - event: ContractUnpaused(indexed address)
+          handler: handleContractUnpaused
+        - event: NFTBurned(indexed uint256,indexed address,uint256)
+          handler: handleNFTBurned
+        - event: NotificationCreated(indexed uint256,indexed address,indexed uint256,uint8,uint256,uint256)
+          handler: handleNotificationCreated
+        - event: Paused(address)
+          handler: handlePaused
+        - event: ProposalAdded(indexed uint256,indexed uint256,string)
+          handler: handleProposalAdded
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: Unpaused(address)
+          handler: handleUnpaused
+        - event: VoteCapReached(indexed uint256,uint256)
+          handler: handleVoteCapReached
+        - event: VoteCast(indexed uint256,indexed address,uint256)
+          handler: handleVoteCast
+        - event: VoterRegistered(indexed uint256,indexed address,uint256)
+          handler: handleVoterRegistered
+      file: ./src/polytix.ts

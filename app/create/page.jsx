@@ -6,7 +6,7 @@ import CreateVoteForm from "./_components/CreateVoteForm"
 
 export default function CreateCampaignPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen max-w-3xl w-full mx-auto">
       {/* <Navbar /> */}
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">

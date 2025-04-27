@@ -636,7 +636,7 @@ __turbopack_context__.s({
     "currencyName": (()=>currencyName),
     "currencySymbol": (()=>currencySymbol)
 });
-const CONTRACT_ADDRESS = "0xc05e611bA004A31d04AA044b298A2A597e4530bb";
+const CONTRACT_ADDRESS = "0x17bad1451ABE049391c8EaBC89EF594A81907121";
 const POLYGON_AMOY_CHAIN_ID = 80002;
 const chainName = "Polygon AMOY Testnet";
 const currencyName = "POL";
@@ -3804,7 +3804,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$graphql$2d$t
 ;
 ;
 const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$core$2f$ApolloClient$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["ApolloClient"]({
-    uri: 'https://api.studio.thegraph.com/query/101223/polytix/v1.0',
+    uri: 'https://api.studio.thegraph.com/query/101223/polytix/v1.1',
     cache: new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$cache$2f$inmemory$2f$inMemoryCache$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InMemoryCache"]()
 });
 const SubgraphContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"])(null);

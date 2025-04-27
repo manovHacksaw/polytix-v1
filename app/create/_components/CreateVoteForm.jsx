@@ -365,10 +365,10 @@ export default function CreateVoteForm() {
         <Alert className="mb-8 border border-amber-200 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-900 shadow-sm">
           <Info className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
           <AlertDescription className="text-amber-800 dark:text-amber-300 ml-2">
-            <p className="font-medium">Ensure sufficient MATIC for gas fees.</p>
+            <p className="font-medium">Ensure sufficient POL for gas fees.</p>
             <p className="text-sm mt-1">
-              Voting campaign creation requires a transaction on the Polygon network, which consumes MATIC for gas.
-              Obtain test MATIC from the{" "}
+              Voting campaign creation requires a transaction on the Polygon network, which consumes POL for gas.
+              Obtain test POL from the{" "}
               <a
                 href="https://faucet.polygon.technology/"
                 target="_blank"
