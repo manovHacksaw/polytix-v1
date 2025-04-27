@@ -662,7 +662,7 @@ __turbopack_context__.s({
     "currencyName": (()=>currencyName),
     "currencySymbol": (()=>currencySymbol)
 });
-const CONTRACT_ADDRESS = "0x65094D0f045924A8253D0Fbd524091e513B4bb75";
+const CONTRACT_ADDRESS = "0x4f9fE99d666381a045b9F3690104a61cdC5c1bbe";
 const POLYGON_AMOY_CHAIN_ID = 80002;
 const chainName = "Polygon AMOY Testnet";
 const currencyName = "POL";
@@ -898,12 +898,6 @@ const metadata = {
                         "internalType": "address",
                         "name": "creator",
                         "type": "address"
-                    },
-                    {
-                        "indexed": false,
-                        "internalType": "string",
-                        "name": "name",
-                        "type": "string"
                     },
                     {
                         "indexed": false,
@@ -1386,11 +1380,6 @@ const metadata = {
                     },
                     {
                         "internalType": "string",
-                        "name": "name",
-                        "type": "string"
-                    },
-                    {
-                        "internalType": "string",
                         "name": "description",
                         "type": "string"
                     },
@@ -1442,11 +1431,6 @@ const metadata = {
                 "inputs": [
                     {
                         "internalType": "string",
-                        "name": "name",
-                        "type": "string"
-                    },
-                    {
-                        "internalType": "string",
                         "name": "description",
                         "type": "string"
                     },
@@ -1488,11 +1472,6 @@ const metadata = {
             },
             {
                 "inputs": [
-                    {
-                        "internalType": "string",
-                        "name": "name",
-                        "type": "string"
-                    },
                     {
                         "internalType": "string",
                         "name": "description",
@@ -1587,11 +1566,6 @@ const metadata = {
                         "internalType": "address",
                         "name": "creator",
                         "type": "address"
-                    },
-                    {
-                        "internalType": "string",
-                        "name": "name",
-                        "type": "string"
                     },
                     {
                         "internalType": "string",
@@ -2784,7 +2758,7 @@ const metadata = {
                 "constructor": {
                     "details": "Constructor initializes the contract with basic settings"
                 },
-                "createCandidateBasedCampaign(string,string,uint8,uint8,uint256,uint256,uint256,string)": {
+                "createCandidateBasedCampaign(string,uint8,uint8,uint256,uint256,uint256,string)": {
                     "details": "Creates a new candidate-based campaign",
                     "params": {
                         "description": "Campaign description",
@@ -2796,7 +2770,7 @@ const metadata = {
                         "startTime": "Campaign start time"
                     }
                 },
-                "createProposalBasedCampaign(string,string,uint8,uint8,uint256,uint256,uint256,string,string[])": {
+                "createProposalBasedCampaign(string,uint8,uint8,uint256,uint256,uint256,string,string[])": {
                     "details": "Creates a new proposal-based campaign",
                     "params": {
                         "description": "Campaign description",
@@ -3264,11 +3238,11 @@ const metadata = {
             ]
         },
         "contracts/Poltix.sol": {
-            "keccak256": "0x7a90d4c481c0eeabc0ed9bdf973bf2ca5f7e3d826fc3cc411ebb3090aeba0525",
+            "keccak256": "0x276fd706180f11dc58880e41583732931081b332e35bcdb946ab4cfc2396f76d",
             "license": "MIT",
             "urls": [
-                "bzz-raw://355c32c6c99a4603cf149c7c5317c635ae6f1adf083d1907dd8cef4b3fcc5c7d",
-                "dweb:/ipfs/QmX7o9fpdpLF1DrgmM2FNVGrBd93Z25YX8HvDVr85W1p9o"
+                "bzz-raw://a0658b921d94a39730616913ec99089110fcfd54c38eb5d2ad2850266f9ea6b0",
+                "dweb:/ipfs/QmYgKKShvZrzLfVD8bFZLA9E3kJkCgifcVB6NLgwKWmZ2G"
             ]
         }
     },
@@ -4027,7 +4001,7 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$core$2f$ApolloClient$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["ApolloClient"]({
-    uri: 'https://api.studio.thegraph.com/query/101223/polytix-final/version/latest',
+    uri: 'https://api.studio.thegraph.com/query/101223/polytix/0.0.5',
     cache: new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$cache$2f$inmemory$2f$inMemoryCache$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["InMemoryCache"]()
 });
 const SubgraphContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(null);
@@ -4049,61 +4023,16 @@ const SubgraphProvider = ({ children })=>{
             const { data } = await client.query({
                 query: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$graphql$2d$tag$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["gql"]`
           {
-            campaignCreateds(orderBy: blockTimestamp, orderDirection: desc, first: 20) {
-              id
-              campaignId
-              creator
-              votingType
-              restriction
-              startTime
-              endTime
-              blockTimestamp
-            }
-            voteCasts(orderBy: blockTimestamp, orderDirection: desc, first: 20) {
-              id
-              campaignId
-              voter
-              targetId
-              blockTimestamp
-            }
-            candidateAddeds(orderBy: blockTimestamp, orderDirection: desc, first: 20) {
-              id
-              campaignId
-              candidateId
-              candidateAddress
-              name
-              blockTimestamp
-            }
-            voterRegistereds(orderBy: blockTimestamp, orderDirection: desc, first: 20) {
-              id
-              campaignId
-              voter
-              tokenId
-              blockTimestamp
-            }
-            transfers(orderBy: blockTimestamp, orderDirection: desc, first: 20) {
-              id
-              from
-              to
-              tokenId
-              blockTimestamp
-            }
-            campaignStatusChangeds(orderBy: blockTimestamp, orderDirection: desc, first: 20) {
-              id
-              campaignId
-              status
-              blockTimestamp
-            }
-             candidateRegistereds(orderBy: blockTimestamp, orderDirection: desc, first: 20) {
-              id
-              campaignId
-              candidate
-              tokenId
-              blockTimestamp
-            }
-          }
+            notificationCreateds(first: 10) {
+    notificationType
+    blockNumber
+    blockTimestamp
+    id
+    campaignId
+  }
         `
             });
+            console.log("NOTIFIFICATIONS", data.notificationCreateds);
             setEvents({
                 campaignsCreated: data.campaignCreateds || [],
                 voteCast: data.voteCasts || [],
@@ -4173,7 +4102,7 @@ const SubgraphProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/context/graphql/queries.js",
-        lineNumber: 129,
+        lineNumber: 85,
         columnNumber: 5
     }, this);
 };
