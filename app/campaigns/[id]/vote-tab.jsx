@@ -12,6 +12,7 @@ import { toast } from "sonner"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import Image from "next/image"
 import { Skeleton } from "@/components/ui/skeleton"
+import { X } from "lucide-react"
 
 export default function VoteTab({
   campaignInfo,
@@ -302,40 +303,64 @@ export default function VoteTab({
       </Card>
 
       <Dialog open={showErrorDialog} onOpenChange={setShowErrorDialog}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-amber-500" />
-              Transaction Failed
-            </DialogTitle>
-            <DialogDescription>There was an issue with your voting transaction</DialogDescription>
-          </DialogHeader>
-          <div className="p-4 bg-amber-50 dark:bg-amber-950/20 rounded-lg">
-            <p className="text-sm text-amber-800 dark:text-amber-300">
-              PolyTix was just migrated from Polygon ZkEVM Cardona Testnet to Polygon Amoy Testnet, which is facing some
-              issues while confirming transactions. Please try:
+        {/* Increased max-width, standard padding */}
+        <DialogTitle></DialogTitle>
+        <DialogContent className="sm:max-w-2xl p-6">
+          {/* Optional Close Button Top Right */}
+          <button
+            onClick={() => setShowErrorDialog(false)}
+            className="absolute top-4 right-4 p-1.5 rounded-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors z-10" // Ensure button is above content
+            aria-label="Close dialog"
+          >
+            <X size={18} />
+          </button>
+
+          {/* Main Content Area */}
+          <div>
+             {/* Header Section: Icon + Title */}
+            <div className="flex items-center gap-3 mb-3">
+              <AlertTriangle className="h-8 w-8 text-amber-500 flex-shrink-0" />
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Vote Transaction Failed
+              </h3>
+            </div>
+
+            {/* Primary Description */}
+            <p className="text-sm text-muted-foreground mb-5">
+              We encountered an issue while trying to submit your vote. This could be due to network congestion or recent platform updates (migration to Polygon Amoy).
             </p>
-            <ul className="list-disc pl-5 mt-2 text-sm text-amber-700 dark:text-amber-400 space-y-1">
-              <li>Increasing gas fees in your wallet</li>
-              <li>Waiting a few minutes and trying again</li>
-              <li>Checking your wallet connection</li>
-            </ul>
-          </div>
-          <div className="flex justify-end gap-3 mt-4">
-            <Button variant="outline" onClick={() => setShowErrorDialog(false)}>
-              Cancel
-            </Button>
-            <Button
-              onClick={() => {
-                setShowErrorDialog(false)
-                handleVote()
-              }}
-            >
-              Try Again
-            </Button>
+
+            {/* Context Box (Subtle Styling) */}
+            <div className="p-4 bg-amber-50 dark:bg-amber-950/30 rounded-lg border border-amber-200 dark:border-amber-800/50 mb-6">
+               {/* Removed explicit title, incorporated into description above */}
+               <p className="text-sm font-medium text-amber-800 dark:text-amber-200 mb-2">
+                  Troubleshooting Suggestions:
+               </p>
+               <ul className="list-disc pl-5 space-y-1.5 text-sm text-amber-700 dark:text-amber-400">
+                 <li>Consider slightly increasing the transaction's gas fee within your wallet settings.</li>
+                 <li>Wait a few moments and then click "Try Again".</li>
+                 <li>Double-check that your wallet is connected and set to the correct network (Polygon Amoy).</li>
+               </ul>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex justify-end gap-3 pt-5 mt-6 border-t border-gray-200 dark:border-gray-700">
+               <Button variant="outline" onClick={() => setShowErrorDialog(false)}>
+                  Close
+               </Button>
+               <Button
+                 onClick={() => {
+                   setShowErrorDialog(false);
+                   handleVote(); // Re-trigger the vote attempt
+                 }}
+               >
+                  Try Again
+               </Button>
+            </div>
           </div>
         </DialogContent>
       </Dialog>
+
     </>
   )
 }

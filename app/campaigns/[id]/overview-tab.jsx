@@ -1,283 +1,200 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Skeleton } from "@/components/ui/skeleton"
-import { formatAddress, formatDate, resolveIpfsUrl } from "@/lib/utils"
-import { CalendarClock, Clock, Users } from "lucide-react"
+import { formatAddress, formatDate, resolveIpfsUrl, cn } from "@/lib/utils" // Added cn
+import { CalendarClock, Clock, Users, FileText } from "lucide-react" // Added FileText for proposals
 import Image from "next/image"
 import { useContract } from "@/context/contract-context"
 import { useState, useEffect } from "react"
 
+// Placeholder image URL using the provided IPFS hash
+const DUMMY_PLACEHOLDER_IMAGE = "https://gateway.pinata.cloud/ipfs/bafkreibluy7juck62zxdgzy3tjviuczrvcsjyt2yc3lwmvuielbaczckpi";
+
 export default function OverviewTab({
   campaignInfo,
-  proposals,
-  candidates: initialCandidates,
+  proposals = [], // Default to empty array
+  candidates: initialCandidates = [], // Default to empty array
   isOwner,
-  isCandidate,
+  isCandidate, // If the current user is *registered* as a candidate
+  isRegisteredVoter, // If the current user is eligible based on registration rules
   isBeforeStart,
   isDuringVoting,
   isAfterEnd,
 }) {
-  const { contract } = useContract();
-  const [candidates, setCandidates] = useState(initialCandidates);
-  const [loading, setLoading] = useState(true);
-
-  // Loading state for candidates
-  const candidatesLoading = campaignInfo?.votingType === 0 && loading;
+  const { contract } = useContract()
+  const [candidates, setCandidates] = useState(initialCandidates)
+  // Combine loading states for simplicity if only fetching candidates here
+  const [isLoadingCandidates, setIsLoadingCandidates] = useState(campaignInfo?.votingType === 0)
 
   useEffect(() => {
-    async function fetchCandidateData() {
-      if (!contract || campaignInfo?.votingType !== 0) {
-        setLoading(false);
-        return;
-      }
+    // Ensure proposals is always an array for safety
+    const safeProposals = Array.isArray(proposals) ? proposals : [];
+    // Set initial candidates state, ensuring it's an array
+    setCandidates(Array.isArray(initialCandidates) ? initialCandidates : []);
 
-      try {
-        setLoading(true);
-        console.log("Fetching candidate data for campaign:", campaignInfo.id);
-        
-        // Get the total number of candidates
-        
-        const candidateCount = await contract.getCandidateIds(campaignInfo.id);
-        console.log(`Found ${candidateCount} candidates`);
-        
-        const fetchedCandidates = [];
-        
-        // Fetch each candidate's details
-        for (let i = 0; i < candidateCount; i++) {
-          try {
-            // Get candidate data from contract
-            const candidateInfo = await contract.getCandidateInfo(campaignInfo.id, i);
-            console.log(`Candidate ${i} data:`, candidateInfo);
-            
-            // Extract candidate data
-            const candidateAddress = candidateInfo[0];
-            const candidateName = candidateInfo[1];
-            const candidateStatement = candidateInfo[2];
-            const candidateImageHash = candidateInfo[3] || "no-image";
-            console.log(resolveIpfsUrl(candidateImageHash));
-            
-            
-            // Get vote count for this candidate
-            const voteCount = candidateInfo[4];
-            
-            fetchedCandidates.push({
-              id: i,
-              address: candidateAddress,
-              name: candidateName,
-              statement: candidateStatement,
-              imageHash: candidateImageHash,
-              voteCount: Number(voteCount)
-            });
-            // console.log(resolveIpfsUrl(imageHash))
-          } catch (candidateErr) {
-            console.error(`Error fetching candidate ${i}:`, candidateErr);
-          }
+    // Only fetch if it's a candidate campaign and contract exists
+    if (campaignInfo?.votingType === 0 && contract) {
+        async function fetchCandidateData() {
+            // Prevent fetching if candidates passed via props seem complete
+             const needsFetching = initialCandidates.some(c => c.statement === "Loading details..." || c.imageHash === "loading");
+            if (!needsFetching) {
+                console.log("OverviewTab: Skipping fetch, candidate data seems complete from props.");
+                setIsLoadingCandidates(false);
+                return;
+            }
+
+            setIsLoadingCandidates(true);
+            console.log("OverviewTab: Fetching candidate data for campaign:", campaignInfo.id);
+            try {
+                const candidateCount = await contract.getCandidateIds(campaignInfo.id);
+                const fetchedCandidates = [];
+                for (let i = 0; i < candidateCount; i++) {
+                    try {
+                        const candidateInfo = await contract.getCandidateInfo(campaignInfo.id, i);
+                        const voteCountResult = await contract.getCandidateInfo(campaignInfo.id, i); // Assuming this returns vote count
+
+                        fetchedCandidates.push({
+                            id: i,
+                            address: candidateInfo[0],
+                            name: candidateInfo[1],
+                            statement: candidateInfo[2] || "No statement provided.",
+                            imageHash: candidateInfo[3] || "no-image",
+                            voteCount: Number(voteCountResult[4] ?? 0) // Get vote count from the second call or fallback
+                        });
+                    } catch (candidateErr) {
+                        console.error(`OverviewTab: Error fetching candidate ${i}:`, candidateErr);
+                        // Keep initial data if fetch fails for one
+                        const existing = initialCandidates.find(c => c.id === i);
+                        if (existing) fetchedCandidates.push({ ...existing, statement: "Error loading details", imageHash: "no-image" });
+                    }
+                }
+                setCandidates(fetchedCandidates);
+            } catch (err) {
+                console.error("OverviewTab: Error fetching candidate count:", err);
+                // Fallback to initial candidates if count fetch fails
+                setCandidates(initialCandidates.map(c => ({...c, statement: "Error loading data", imageHash: "no-image" })));
+            } finally {
+                setIsLoadingCandidates(false);
+            }
         }
-        
-        setCandidates(fetchedCandidates);
-      } catch (err) {
-        console.error("Error fetching candidates:", err);
-      } finally {
-        setLoading(false);
-      }
+        fetchCandidateData();
+    } else {
+         // If not candidate-based or no contract, stop loading
+         setIsLoadingCandidates(false);
     }
+  }, [contract, campaignInfo, initialCandidates]); // Depend on initialCandidates too
 
-    fetchCandidateData();
-  }, [contract, campaignInfo]);
+  // Ensure campaignInfo exists before rendering details
+  if (!campaignInfo) {
+    return <Skeleton className="h-48 w-full" />; // Or a more specific loading state
+  }
 
   return (
     <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Campaign Details</CardTitle>
-          <CardDescription>Overview of this campaign</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <h3 className="text-sm font-medium mb-1">Campaign Type</h3>
-              <p className="text-sm text-muted-foreground">
-                {campaignInfo.votingType === 0 ? "Candidate-Based Election" : "Proposal-Based Voting"}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium mb-1">Participation</h3>
-              <p className="text-sm text-muted-foreground">
-                {campaignInfo.restriction === 0
-                  ? "Open to All"
-                  : campaignInfo.restriction === 1
-                    ? "Limited (Token Gated)"
-                    : "Registration Required"}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium mb-1">Start Date</h3>
-              <p className="text-sm text-muted-foreground">{formatDate(campaignInfo.startTime)}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium mb-1">End Date</h3>
-              <p className="text-sm text-muted-foreground">{formatDate(campaignInfo.endTime)}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium mb-1">Creator</h3>
-              <p className="text-sm text-muted-foreground">{formatAddress(campaignInfo.creator)}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium mb-1">Status</h3>
-              <div>
-                <Badge
-                  variant={isDuringVoting ? "default" : isAfterEnd ? "secondary" : "outline"}
-                  className={
-                    isDuringVoting
-                      ? "bg-green-600 hover:bg-green-700"
-                      : isAfterEnd
-                        ? ""
-                        : "text-blue-600 border-blue-300"
-                  }
-                >
-                  {isBeforeStart ? "Upcoming" : isDuringVoting ? "Active" : "Ended"}
-                </Badge>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {campaignInfo.votingType === 0 ? (
-        <Card>
+      {/* Campaign Details Card */}
+     
+      {/* Candidates Section */}
+      {campaignInfo.votingType === 0 && (
+        <Card className="rounded-xl shadow-sm overflow-hidden">
           <CardHeader>
-            <CardTitle>Candidates</CardTitle>
+            <CardTitle className="text-lg">Candidates</CardTitle>
             <CardDescription>
-              {candidatesLoading
-                ? "Loading candidate details from blockchain..."
-                : `${candidates.length} candidates in this election`}
+              {isLoadingCandidates
+                ? "Loading candidate details..."
+                : `${candidates.length} candidate${candidates.length !== 1 ? 's' : ''} participating`}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {candidatesLoading ? (
-                // Show skeletons while loading
-                Array(3).fill(0).map((_, idx) => (
-                  <Card key={`skeleton-${idx}`} className="overflow-hidden">
-                    <div className="p-4 flex gap-4">
-                      <div className="w-16 h-16 rounded-md bg-muted flex-shrink-0"></div>
-                      <div className="flex-1">
-                        <Skeleton className="h-5 w-1/2 mb-2" />
-                        <Skeleton className="h-3 w-1/3 mb-4" />
-                        <Skeleton className="h-3 w-full mb-2" />
-                        <Skeleton className="h-3 w-3/4" />
+              {isLoadingCandidates ? (
+                // Skeletons with circular image placeholder
+                Array(Math.max(2, candidates.length)) // Show at least 2 skeletons
+                  .fill(0).map((_, idx) => (
+                    <div key={`skeleton-${idx}`} className="p-4 flex gap-4 border rounded-lg bg-muted/30">
+                      <Skeleton className="w-14 h-14 rounded-full flex-shrink-0" /> {/* Circular skeleton */}
+                      <div className="flex-1 space-y-2">
+                        <Skeleton className="h-5 w-3/4" />
+                        <Skeleton className="h-3 w-1/2" />
+                        <Skeleton className="h-3 w-full" />
+                        <Skeleton className="h-3 w-5/6" />
                       </div>
                     </div>
-                  </Card>
-                ))
+                  ))
               ) : candidates.length > 0 ? (
-                candidates.map((candidate) => (
-                  <Card key={candidate.id} className="overflow-hidden">
-                    <div className="p-4 flex gap-4">
-                      <div className="w-16 h-16 rounded-md bg-muted flex items-center justify-center flex-shrink-0">
-                        {candidate.imageHash &&
-                        candidate.imageHash !== "loading" &&
-                        candidate.imageHash !== "no-image" ? (
-                          <Image
-                            src={resolveIpfsUrl(candidate.imageHash)}
-                            width={64}
-                            height={64}
-                            alt={candidate.name}
-                            className="rounded-md object-cover"
-                          />
-                        ) : (
-                          <Users className="h-8 w-8 text-muted-foreground" />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-medium">{candidate.name}</h3>
-                        <p className="text-xs text-muted-foreground mb-2">{formatAddress(candidate.address)}</p>
-                        <p className="text-sm text-muted-foreground line-clamp-3">{candidate.statement}</p>
-                      </div>
-                    </div>
-                  </Card>
-                ))
+                candidates.map((candidate) => {
+                  const imageUrl = (candidate.imageHash && candidate.imageHash !== "no-image")
+                                   ? resolveIpfsUrl(candidate.imageHash)
+                                   : DUMMY_PLACEHOLDER_IMAGE; // Use dummy if invalid/missing
+                  return(
+                    <Card key={candidate.id} className="overflow-hidden bg-background/50 hover:shadow-md transition-shadow">
+                       {/* Use Card here for structure */}
+                      <CardContent className="p-4 flex items-start gap-4">
+                          {/* Circular Image Container */}
+                          <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center flex-shrink-0 overflow-hidden border">
+                            <Image
+                              // Use resolved URL or placeholder
+                              src={imageUrl || "/placeholder.svg"} // Final fallback
+                              width={64}
+                              height={64}
+                              alt={candidate.name || 'Candidate'}
+                              className="w-full h-full object-cover" // Ensure image covers the circle
+                              unoptimized // Good for IPFS
+                              // Optional: Add error handling for the image itself
+                              onError={(e) => { e.currentTarget.src = DUMMY_PLACEHOLDER_IMAGE; }}
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold text-base">{candidate.name || `Candidate ${candidate.id}`}</h3>
+                            <p className="text-xs text-muted-foreground font-mono mb-2">{formatAddress(candidate.address)}</p>
+                            <p className="text-sm text-muted-foreground line-clamp-3">{candidate.statement || "No statement provided."}</p>
+                          </div>
+                      </CardContent>
+                    </Card>
+                  )
+                })
               ) : (
-                <div className="col-span-2 text-center p-8 text-muted-foreground">
-                  No candidates found for this campaign
-                </div>
+                <p className="col-span-1 md:col-span-2 text-center p-8 text-muted-foreground">
+                  No candidates have registered for this campaign yet.
+                </p>
               )}
-            </div>
-          </CardContent>
-        </Card>
-      ) : (
-        <Card>
-          <CardHeader>
-            <CardTitle>Proposals</CardTitle>
-            <CardDescription>{proposals.length} proposals in this campaign</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {proposals.map((proposal) => (
-                <Card key={proposal.id} className="overflow-hidden">
-                  <div className="p-4">
-                    <h3 className="font-medium mb-1">Proposal {proposal.id + 1}</h3>
-                    <p className="text-sm text-muted-foreground">{proposal.content}</p>
-                  </div>
-                </Card>
-              ))}
             </div>
           </CardContent>
         </Card>
       )}
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Statistics</CardTitle>
-          <CardDescription>Current participation statistics</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="flex items-start gap-3">
-              <Users className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold text-base">Participation</h3>
-                <div className="text-sm text-muted-foreground mt-1 space-y-0.5">
-                  <div>Total Votes Cast: {campaignInfo.totalVotes}</div>
-                  {campaignInfo.restriction !== 0 && <div>Registered: {campaignInfo.registeredVoterCount}</div>}
-                  <div>
-                    {campaignInfo.votingType === 0 ? "Candidates" : "Proposals"}: {campaignInfo.itemCount}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <CalendarClock className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold text-base">Timeline</h3>
-                <div className="text-sm text-muted-foreground mt-1 space-y-0.5">
-                  <div>Start: {formatDate(campaignInfo.startTime)}</div>
-                  <div>End: {formatDate(campaignInfo.endTime)}</div>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold text-base">Status</h3>
-                <div className="text-sm text-muted-foreground mt-1 space-y-0.5">
-                  <div>Campaign: {isBeforeStart ? "Upcoming" : isDuringVoting ? "Active" : "Ended"}</div>
-                  {isCandidate && (
-                    <div>
-                      Your Role: <span className="text-purple-600">Candidate</span>
-                    </div>
-                  )}
-                  {isOwner && (
-                    <div>
-                      Your Role: <span className="text-blue-600">Creator</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Proposals Section */}
+      {campaignInfo.votingType === 1 && (
+        <Card className="rounded-xl shadow-sm overflow-hidden">
+          <CardHeader>
+            <CardTitle className="text-lg">Proposals</CardTitle>
+            <CardDescription>{proposals.length} proposal{proposals.length !== 1 ? 's' : ''} submitted</CardDescription>
+          </CardHeader>
+          <CardContent>
+             {/* Use a list for proposals */}
+            {proposals.length > 0 ? (
+              <ul className="space-y-3">
+                {proposals.map((proposal, index) => (
+                  <li key={proposal.id || index} className="p-4 border rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                     {/* Optionally add a small icon */}
+                     <div className="flex items-start gap-3">
+                         <FileText className="h-4 w-4 mt-1 text-primary flex-shrink-0"/>
+                         <p className="text-sm text-foreground flex-1">{proposal.content}</p>
+                     </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-center p-8 text-muted-foreground">
+                No proposals found for this campaign.
+              </p>
+            )}
+          </CardContent>
+        </Card>
+      )}
+
+    
     </div>
   )
 }

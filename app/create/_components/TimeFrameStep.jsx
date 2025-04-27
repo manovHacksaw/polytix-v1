@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { CardContent } from "@/components/ui/card";
@@ -9,6 +10,13 @@ import { StepDescription } from "./StepDescription";
 import { ValidationStatus } from "./ValidationStatus";
 import { ErrorMessage } from "./ErrorMessage";
 import { Circle as InfoCircle } from "lucide-react";
+import { 
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue 
+} from "@/components/ui/select";
 
 export function TimeFrameStep({
   startTime,
@@ -18,6 +26,12 @@ export function TimeFrameStep({
   validations,
   campaignType = "proposal"
 }) {
+  // State for separate date and time inputs
+  const [startDate, setStartDate] = useState("");
+  const [startTimeValue, setStartTimeValue] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [endTimeValue, setEndTimeValue] = useState("");
+
   // Calculate minimum start time based on campaign type
   const calculateMinStartTime = () => {
     const minStart = new Date();
@@ -28,19 +42,104 @@ export function TimeFrameStep({
       // For proposal-based, must be at least 10 minutes in the future
       minStart.setMinutes(minStart.getMinutes() + 10);
     }
-    return format(minStart, "yyyy-MM-dd'T'HH:mm");
+    return minStart;
   };
 
   // Calculate minimum end time based on start time (must be at least 30 minutes after start time)
-  const calculateMinEndTime = (startTime) => {
-    if (!startTime) return calculateMinStartTime();
-    const start = new Date(startTime);
+  const calculateMinEndTime = (startTimeStr) => {
+    if (!startTimeStr) return calculateMinStartTime();
+    const start = new Date(startTimeStr);
     start.setMinutes(start.getMinutes() + 30);
-    return format(start, "yyyy-MM-dd'T'HH:mm");
+    return start;
   };
 
-  const minStartTimeStr = calculateMinStartTime();
-  const minEndTimeStr = calculateMinEndTime(startTime);
+  const minStartTime = calculateMinStartTime();
+  const minStartDateStr = format(minStartTime, "yyyy-MM-dd");
+  const minStartTimeStr = format(minStartTime, "HH:mm");
+  
+  const minEndTime = calculateMinEndTime(startTime);
+  const minEndDateStr = format(minEndTime, "yyyy-MM-dd");
+  const minEndTimeStr = format(minEndTime, "HH:mm");
+
+  // Initialize date and time values from props on component mount
+  useEffect(() => {
+    if (startTime) {
+      const date = new Date(startTime);
+      setStartDate(format(date, "yyyy-MM-dd"));
+      setStartTimeValue(format(date, "HH:mm"));
+    }
+    
+    if (endTime) {
+      const date = new Date(endTime);
+      setEndDate(format(date, "yyyy-MM-dd"));
+      setEndTimeValue(format(date, "HH:mm"));
+    }
+  }, []);
+
+  // Combine date and time into ISO string and trigger parent onChange
+  const handleDateTimeChange = (type, value, field) => {
+    let currentDate, currentTime;
+    
+    if (type === "start") {
+      currentDate = field === "date" ? value : startDate;
+      currentTime = field === "time" ? value : startTimeValue;
+      
+      if (currentDate && currentTime) {
+        const newDateTime = `${currentDate}T${currentTime}`;
+        const customEvent = {
+          target: {
+            name: "startTime",
+            value: newDateTime
+          }
+        };
+        onChange(customEvent);
+      }
+      
+      if (field === "date") setStartDate(value);
+      if (field === "time") setStartTimeValue(value);
+    } else {
+      currentDate = field === "date" ? value : endDate;
+      currentTime = field === "time" ? value : endTimeValue;
+      
+      if (currentDate && currentTime) {
+        const newDateTime = `${currentDate}T${currentTime}`;
+        const customEvent = {
+          target: {
+            name: "endTime",
+            value: newDateTime
+          }
+        };
+        onChange(customEvent);
+      }
+      
+      if (field === "date") setEndDate(value);
+      if (field === "time") setEndTimeValue(value);
+    }
+  };
+
+  // Generate time options for select box (15 min intervals)
+  const generateTimeOptions = (minTime = "00:00") => {
+    const options = [];
+    const [minHour, minMinute] = minTime.split(":").map(Number);
+    
+    for (let hour = 0; hour < 24; hour++) {
+      for (let minute = 0; minute < 60; minute += 15) {
+        // Skip times before minimum time
+        if (hour < minHour || (hour === minHour && minute < minMinute)) continue;
+        
+        const formattedHour = hour.toString().padStart(2, "0");
+        const formattedMinute = minute.toString().padStart(2, "0");
+        const timeValue = `${formattedHour}:${formattedMinute}`;
+        options.push(
+          <SelectItem key={timeValue} value={timeValue}>
+            {hour > 12 ? `${hour - 12}:${formattedMinute} PM` : hour === 12 ? `12:${formattedMinute} PM` : hour === 0 ? `12:${formattedMinute} AM` : `${hour}:${formattedMinute} AM`}
+          </SelectItem>
+        );
+      }
+    }
+    
+    return options;
+  };
 
   return (
     <>
@@ -65,7 +164,7 @@ export function TimeFrameStep({
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 items-center max-w-2xl justify-center mx-auto">
           {/* Start Time */}
           <div className="space-y-2">
             <div className="flex justify-between items-center">
@@ -74,19 +173,41 @@ export function TimeFrameStep({
               </Label>
               <ValidationStatus isValid={validations.startTime} />
             </div>
-            <Input
-              id="startTime"
-              name="startTime"
-              type="datetime-local"
-              min={minStartTimeStr}
-              value={startTime}
-              onChange={onChange}
-              required
-              className={`transition-all duration-150 ${
-                errors.startTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
-                validations.startTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
-              }`}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <div>
+                <Label htmlFor="startDate" className="text-xs mb-1 block">Date</Label>
+                <Input
+                  id="startDate"
+                  name="startDate"
+                  type="date"
+                  min={minStartDateStr}
+                  value={startDate}
+                  onChange={(e) => handleDateTimeChange("start", e.target.value, "date")}
+                  required
+                  className={`transition-all duration-150 ${
+                    errors.startTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+                    validations.startTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+                  }`}
+                />
+              </div>
+              <div>
+                <Label htmlFor="startTime" className="text-xs mb-1 block">Time</Label>
+                <Select 
+                  value={startTimeValue} 
+                  onValueChange={(value) => handleDateTimeChange("start", value, "time")}
+                >
+                  <SelectTrigger className={`transition-all duration-150 ${
+                    errors.startTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+                    validations.startTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+                  }`}>
+                    <SelectValue placeholder="Select time" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {generateTimeOptions(minStartTimeStr)}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
             <ErrorMessage error={errors.startTime} />
             <p className="text-xs text-muted-foreground">
               {campaignType === "candidate" 
@@ -104,20 +225,43 @@ export function TimeFrameStep({
               </Label>
               <ValidationStatus isValid={validations.endTime} />
             </div>
-            <Input
-              id="endTime"
-              name="endTime"
-              type="datetime-local"
-              min={minEndTimeStr}
-              value={endTime}
-              onChange={onChange}
-              required
-              disabled={!startTime || !validations.startTime}
-              className={`transition-all duration-150 ${
-                errors.endTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
-                validations.endTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
-              } ${(!startTime || !validations.startTime) ? 'cursor-not-allowed opacity-60' : ''}`}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <div>
+                <Label htmlFor="endDate" className="text-xs mb-1 block">Date</Label>
+                <Input
+                  id="endDate"
+                  name="endDate"
+                  type="date"
+                  min={minEndDateStr}
+                  value={endDate}
+                  onChange={(e) => handleDateTimeChange("end", e.target.value, "date")}
+                  required
+                  disabled={!startTime || !validations.startTime}
+                  className={`transition-all duration-150 ${
+                    errors.endTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+                    validations.endTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+                  } ${(!startTime || !validations.startTime) ? 'cursor-not-allowed opacity-60' : ''}`}
+                />
+              </div>
+              <div>
+                <Label htmlFor="endTime" className="text-xs mb-1 block">Time</Label>
+                <Select 
+                  value={endTimeValue} 
+                  onValueChange={(value) => handleDateTimeChange("end", value, "time")}
+                  disabled={!startTime || !validations.startTime}
+                >
+                  <SelectTrigger className={`transition-all duration-150 ${
+                    errors.endTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" :
+                    validations.endTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"
+                  } ${(!startTime || !validations.startTime) ? 'cursor-not-allowed opacity-60' : ''}`}>
+                    <SelectValue placeholder="Select time" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {generateTimeOptions(minEndTimeStr)}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
             <ErrorMessage error={errors.endTime} />
             <p className="text-xs text-muted-foreground">
               Must be at least 30 minutes after the start time.

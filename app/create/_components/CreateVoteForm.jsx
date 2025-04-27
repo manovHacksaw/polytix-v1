@@ -283,7 +283,7 @@ export default function CreateVoteForm() {
       } else {
         // Use createCandidateBasedCampaign from the contract
         tx = await contract.createCandidateBasedCampaign(
-          formData.name,
+          // formData.name,
           formData.description,
           Number.parseInt(formData.restriction),
           Number.parseInt(formData.resultType),

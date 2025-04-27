@@ -1717,6 +1717,7 @@ __turbopack_context__.s({
     "TimeFrameStep": (()=>TimeFrameStep)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/label.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/input.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/card.jsx [app-ssr] (ecmascript)");
@@ -1726,6 +1727,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ValidationStatus$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/create/_components/ValidationStatus.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ErrorMessage$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/create/_components/ErrorMessage.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle.js [app-ssr] (ecmascript) <export default as Circle>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/select.jsx [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
@@ -1737,7 +1739,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
+;
+;
 function TimeFrameStep({ startTime, endTime, onChange, errors, validations, campaignType = "proposal" }) {
+    // State for separate date and time inputs
+    const [startDate, setStartDate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [startTimeValue, setStartTimeValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [endDate, setEndDate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [endTimeValue, setEndTimeValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     // Calculate minimum start time based on campaign type
     const calculateMinStartTime = ()=>{
         const minStart = new Date();
@@ -1748,17 +1757,92 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
             // For proposal-based, must be at least 10 minutes in the future
             minStart.setMinutes(minStart.getMinutes() + 10);
         }
-        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(minStart, "yyyy-MM-dd'T'HH:mm");
+        return minStart;
     };
     // Calculate minimum end time based on start time (must be at least 30 minutes after start time)
-    const calculateMinEndTime = (startTime)=>{
-        if (!startTime) return calculateMinStartTime();
-        const start = new Date(startTime);
+    const calculateMinEndTime = (startTimeStr)=>{
+        if (!startTimeStr) return calculateMinStartTime();
+        const start = new Date(startTimeStr);
         start.setMinutes(start.getMinutes() + 30);
-        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(start, "yyyy-MM-dd'T'HH:mm");
+        return start;
     };
-    const minStartTimeStr = calculateMinStartTime();
-    const minEndTimeStr = calculateMinEndTime(startTime);
+    const minStartTime = calculateMinStartTime();
+    const minStartDateStr = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(minStartTime, "yyyy-MM-dd");
+    const minStartTimeStr = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(minStartTime, "HH:mm");
+    const minEndTime = calculateMinEndTime(startTime);
+    const minEndDateStr = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(minEndTime, "yyyy-MM-dd");
+    const minEndTimeStr = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(minEndTime, "HH:mm");
+    // Initialize date and time values from props on component mount
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (startTime) {
+            const date = new Date(startTime);
+            setStartDate((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(date, "yyyy-MM-dd"));
+            setStartTimeValue((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(date, "HH:mm"));
+        }
+        if (endTime) {
+            const date = new Date(endTime);
+            setEndDate((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(date, "yyyy-MM-dd"));
+            setEndTimeValue((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(date, "HH:mm"));
+        }
+    }, []);
+    // Combine date and time into ISO string and trigger parent onChange
+    const handleDateTimeChange = (type, value, field)=>{
+        let currentDate, currentTime;
+        if (type === "start") {
+            currentDate = field === "date" ? value : startDate;
+            currentTime = field === "time" ? value : startTimeValue;
+            if (currentDate && currentTime) {
+                const newDateTime = `${currentDate}T${currentTime}`;
+                const customEvent = {
+                    target: {
+                        name: "startTime",
+                        value: newDateTime
+                    }
+                };
+                onChange(customEvent);
+            }
+            if (field === "date") setStartDate(value);
+            if (field === "time") setStartTimeValue(value);
+        } else {
+            currentDate = field === "date" ? value : endDate;
+            currentTime = field === "time" ? value : endTimeValue;
+            if (currentDate && currentTime) {
+                const newDateTime = `${currentDate}T${currentTime}`;
+                const customEvent = {
+                    target: {
+                        name: "endTime",
+                        value: newDateTime
+                    }
+                };
+                onChange(customEvent);
+            }
+            if (field === "date") setEndDate(value);
+            if (field === "time") setEndTimeValue(value);
+        }
+    };
+    // Generate time options for select box (15 min intervals)
+    const generateTimeOptions = (minTime = "00:00")=>{
+        const options = [];
+        const [minHour, minMinute] = minTime.split(":").map(Number);
+        for(let hour = 0; hour < 24; hour++){
+            for(let minute = 0; minute < 60; minute += 15){
+                // Skip times before minimum time
+                if (hour < minHour || hour === minHour && minute < minMinute) continue;
+                const formattedHour = hour.toString().padStart(2, "0");
+                const formattedMinute = minute.toString().padStart(2, "0");
+                const timeValue = `${formattedHour}:${formattedMinute}`;
+                options.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
+                    value: timeValue,
+                    children: hour > 12 ? `${hour - 12}:${formattedMinute} PM` : hour === 12 ? `12:${formattedMinute} PM` : hour === 0 ? `12:${formattedMinute} AM` : `${hour}:${formattedMinute} AM`
+                }, timeValue, false, {
+                    fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                    lineNumber: 134,
+                    columnNumber: 11
+                }, this));
+            }
+        }
+        return options;
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$StepDescription$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["StepDescription"], {
@@ -1768,7 +1852,7 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                 description: "Specify the exact start and end date/time for the voting period."
             }, void 0, false, {
                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                lineNumber: 47,
+                lineNumber: 146,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1783,7 +1867,7 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                     className: "h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                    lineNumber: 57,
+                                    lineNumber: 156,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1794,7 +1878,7 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                             children: "Candidate Registration Period"
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                            lineNumber: 59,
+                                            lineNumber: 158,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1802,28 +1886,28 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                             children: "For candidate-based campaigns, voting can only start at least 30 minutes after creation to allow time for candidates to register."
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                            lineNumber: 60,
+                                            lineNumber: 159,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                    lineNumber: 58,
+                                    lineNumber: 157,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                            lineNumber: 56,
+                            lineNumber: 155,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                        lineNumber: 55,
+                        lineNumber: 154,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 md:grid-cols-2 gap-6",
+                        className: "grid grid-cols-1 gap-6 items-center max-w-2xl justify-center mx-auto",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-2",
@@ -1837,41 +1921,115 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                                 children: "Start Time (Your Local Time)"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 72,
+                                                lineNumber: 171,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ValidationStatus$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ValidationStatus"], {
                                                 isValid: validations.startTime
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 75,
+                                                lineNumber: 174,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 71,
+                                        lineNumber: 170,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                                        id: "startTime",
-                                        name: "startTime",
-                                        type: "datetime-local",
-                                        min: minStartTimeStr,
-                                        value: startTime,
-                                        onChange: onChange,
-                                        required: true,
-                                        className: `transition-all duration-150 ${errors.startTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : validations.startTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"}`
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "grid grid-cols-1 md:grid-cols-2 gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "startDate",
+                                                        className: "text-xs mb-1 block",
+                                                        children: "Date"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 178,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "startDate",
+                                                        name: "startDate",
+                                                        type: "date",
+                                                        min: minStartDateStr,
+                                                        value: startDate,
+                                                        onChange: (e)=>handleDateTimeChange("start", e.target.value, "date"),
+                                                        required: true,
+                                                        className: `transition-all duration-150 ${errors.startTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : validations.startTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"}`
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 179,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                lineNumber: 177,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "startTime",
+                                                        className: "text-xs mb-1 block",
+                                                        children: "Time"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 194,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
+                                                        value: startTimeValue,
+                                                        onValueChange: (value)=>handleDateTimeChange("start", value, "time"),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectTrigger"], {
+                                                                className: `transition-all duration-150 ${errors.startTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : validations.startTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"}`,
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectValue"], {
+                                                                    placeholder: "Select time"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                                    lineNumber: 203,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                                lineNumber: 199,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
+                                                                children: generateTimeOptions(minStartTimeStr)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                                lineNumber: 205,
+                                                                columnNumber: 19
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 195,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                lineNumber: 193,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 77,
+                                        lineNumber: 176,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ErrorMessage$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ErrorMessage"], {
                                         error: errors.startTime
                                     }, void 0, false, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 90,
+                                        lineNumber: 211,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1879,13 +2037,13 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                         children: campaignType === "candidate" ? "Must be at least 30 minutes from now to allow for candidate registration" : "Must be at least 10 minutes from now due to blockchain constraints"
                                     }, void 0, false, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 91,
+                                        lineNumber: 212,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                lineNumber: 70,
+                                lineNumber: 169,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1900,42 +2058,117 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                                 children: "End Time (Your Local Time)"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 102,
+                                                lineNumber: 223,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ValidationStatus$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ValidationStatus"], {
                                                 isValid: validations.endTime
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 105,
+                                                lineNumber: 226,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 101,
+                                        lineNumber: 222,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                                        id: "endTime",
-                                        name: "endTime",
-                                        type: "datetime-local",
-                                        min: minEndTimeStr,
-                                        value: endTime,
-                                        onChange: onChange,
-                                        required: true,
-                                        disabled: !startTime || !validations.startTime,
-                                        className: `transition-all duration-150 ${errors.endTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : validations.endTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"} ${!startTime || !validations.startTime ? 'cursor-not-allowed opacity-60' : ''}`
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "grid grid-cols-1 md:grid-cols-2 gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "endDate",
+                                                        className: "text-xs mb-1 block",
+                                                        children: "Date"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 230,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "endDate",
+                                                        name: "endDate",
+                                                        type: "date",
+                                                        min: minEndDateStr,
+                                                        value: endDate,
+                                                        onChange: (e)=>handleDateTimeChange("end", e.target.value, "date"),
+                                                        required: true,
+                                                        disabled: !startTime || !validations.startTime,
+                                                        className: `transition-all duration-150 ${errors.endTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : validations.endTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"} ${!startTime || !validations.startTime ? 'cursor-not-allowed opacity-60' : ''}`
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 231,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                lineNumber: 229,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "endTime",
+                                                        className: "text-xs mb-1 block",
+                                                        children: "Time"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 247,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
+                                                        value: endTimeValue,
+                                                        onValueChange: (value)=>handleDateTimeChange("end", value, "time"),
+                                                        disabled: !startTime || !validations.startTime,
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectTrigger"], {
+                                                                className: `transition-all duration-150 ${errors.endTime ? "border-red-500 focus-visible:ring-red-500/50 shadow-inner shadow-red-500/10" : validations.endTime ? "border-green-500 focus-visible:ring-green-500/50 shadow-inner shadow-green-500/10" : "focus-visible:ring-primary/50"} ${!startTime || !validations.startTime ? 'cursor-not-allowed opacity-60' : ''}`,
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectValue"], {
+                                                                    placeholder: "Select time"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                                    lineNumber: 257,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                                lineNumber: 253,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
+                                                                children: generateTimeOptions(minEndTimeStr)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                                lineNumber: 259,
+                                                                columnNumber: 19
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                        lineNumber: 248,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
+                                                lineNumber: 246,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 107,
+                                        lineNumber: 228,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$create$2f$_components$2f$ErrorMessage$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ErrorMessage"], {
                                         error: errors.endTime
                                     }, void 0, false, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 121,
+                                        lineNumber: 265,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1943,19 +2176,19 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                         children: "Must be at least 30 minutes after the start time."
                                     }, void 0, false, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 122,
+                                        lineNumber: 266,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                lineNumber: 100,
+                                lineNumber: 221,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                        lineNumber: 68,
+                        lineNumber: 167,
                         columnNumber: 9
                     }, this),
                     startTime && endTime && validations.startTime && validations.endTime && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1974,7 +2207,7 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                 children: "Voting Period Summary:"
                             }, void 0, false, {
                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                lineNumber: 135,
+                                lineNumber: 279,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1987,7 +2220,7 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                                 children: "STARTS"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 138,
+                                                lineNumber: 282,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1998,13 +2231,13 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 139,
+                                                lineNumber: 283,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 137,
+                                        lineNumber: 281,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2014,7 +2247,7 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                                 children: "ENDS"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 142,
+                                                lineNumber: 286,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2025,31 +2258,31 @@ function TimeFrameStep({ startTime, endTime, onChange, errors, validations, camp
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                                lineNumber: 143,
+                                                lineNumber: 287,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                        lineNumber: 141,
+                                        lineNumber: 285,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                                lineNumber: 136,
+                                lineNumber: 280,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                        lineNumber: 130,
+                        lineNumber: 274,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/create/_components/TimeFrameStep.jsx",
-                lineNumber: 53,
+                lineNumber: 152,
                 columnNumber: 7
             }, this)
         ]
@@ -3066,7 +3299,8 @@ function CreateVoteForm() {
                 formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "", formData.proposals.filter((p)=>p.trim().length > 0));
             } else {
                 // Use createCandidateBasedCampaign from the contract
-                tx = await contract.createCandidateBasedCampaign(formData.name, formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "");
+                tx = await contract.createCandidateBasedCampaign(// formData.name,
+                formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "");
             }
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].promise(tx.wait(), {
                 loading: "Creating voting campaign...",

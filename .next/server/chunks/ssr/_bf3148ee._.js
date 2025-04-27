@@ -4681,7 +4681,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/badge.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/skeleton.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/alert.jsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-ssr] (ecmascript) <export default as ArrowLeft>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-ssr] (ecmascript) <export default as ArrowLeft>"); // Added Wallet
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CalendarClock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/calendar-clock.js [app-ssr] (ecmascript) <export default as CalendarClock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript) <export default as Users>");
@@ -4698,6 +4698,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$graphql$2d$t
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$campaigns$2f5b$id$5d2f$overview$2d$tab$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/campaigns/[id]/overview-tab.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$campaigns$2f5b$id$5d2f$vote$2d$tab$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/campaigns/[id]/vote-tab.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$voter$2d$status$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/use-voter-status.jsx [app-ssr] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '@/components/MandatoryWalletConnectDialog'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 "use client";
 ;
 ;
@@ -4720,12 +4725,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$voter$2d$sta
 ;
 ;
 ;
-// GraphQL client setup
+;
+// ... (Keep GraphQL client setup and QUERY as before) ...
 const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$core$2f$ApolloClient$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["ApolloClient"]({
     uri: "https://api.studio.thegraph.com/query/101223/polytix-final/version/latest",
     cache: new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$cache$2f$inmemory$2f$inMemoryCache$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InMemoryCache"]()
 });
-// GraphQL query for campaign details
 const CAMPAIGN_DETAILS_QUERY = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$graphql$2d$tag$2f$lib$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["gql"]`
   query CampaignDetails($id: String!) {
     campaignCreateds(where: {campaignId: $id}, first: 1) {
@@ -4766,7 +4771,8 @@ function CampaignDetailsPage() {
     const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useParams"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const campaignId = params.id;
-    const { contract, address, isConnected, connectWallet } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$contract$2d$context$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContract"])();
+    const { contract, address, isConnected, connectWallet } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$contract$2d$context$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContract"])() // Get isConnected and connectWallet
+    ;
     const { refetchEvents } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$graphql$2f$queries$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSubgraph"])();
     // State variables
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
@@ -4774,56 +4780,63 @@ function CampaignDetailsPage() {
     const [campaignInfo, setCampaignInfo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [proposals, setProposals] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [candidates, setCandidates] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
-    // Replace these lines:
-    // const [userRegistered, setUserRegistered] = useState(false)
-    // const [userVoted, setUserVoted] = useState(false)
-    // const [isCandidate, setIsCandidate] = useState(false)
-    // With this hook:
-    const { isLoading: voterStatusLoading, isRegisteredVoter: userRegistered, isRegisteredCandidate: isCandidate, hasVoted: userVoted, error: voterStatusError } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$voter$2d$status$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useVoterStatus"])(campaignId);
+    // Use voter status hook
+    const { isLoading: voterStatusLoading, isRegisteredVoter: userRegistered, isRegisteredCandidate: isCandidate, hasVoted: userVoted, error: voterStatusError, refetch: refetchVoterStatus // Get refetch function from hook
+     } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$voter$2d$status$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useVoterStatus"])(campaignId) // Pass campaignId here
+    ;
     const [isOwner, setIsOwner] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("overview");
-    console.log(candidates);
     // Time-based states
     const [isBeforeStart, setIsBeforeStart] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isDuringVoting, setIsDuringVoting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isAfterEnd, setIsAfterEnd] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     // Helper function to fetch candidate data directly from contract
     const fetchCandidateDataFromContract = async (campaignId, candidateList)=>{
-        if (!contract) {
-            console.warn("Contract instance not available for fetching candidate data");
-            return candidateList;
+        // Check if contract is available and candidate list is not empty
+        if (!contract || !candidateList || candidateList.length === 0) {
+            console.warn("Contract not available or no candidates to fetch details for.");
+            return candidateList; // Return the list as is
         }
         try {
             const updatedCandidates = [
                 ...candidateList
             ];
             console.log(`Fetching detailed data for ${updatedCandidates.length} candidates from blockchain`);
-            for(let i = 0; i < updatedCandidates.length; i++){
+            // Use Promise.all for potentially faster fetching
+            const candidatePromises = updatedCandidates.map(async (candidate, index)=>{
                 try {
-                    console.log(`Fetching data for candidate ${updatedCandidates[i].id} from contract`);
-                    const candidateInfo = await contract.getCandidateInfo(campaignId, updatedCandidates[i].id);
-                    // Update with contract data
-                    updatedCandidates[i].statement = candidateInfo[2] || "No statement provided";
-                    updatedCandidates[i].imageHash = candidateInfo[3] || "no-image";
-                    console.log(`Successfully fetched data for candidate ${updatedCandidates[i].id}`);
+                    // console.log(`Fetching data for candidate ${candidate.id} from contract`);
+                    const candidateInfo = await contract.getCandidateInfo(campaignId, candidate.id);
+                    // Return a new object with updated data
+                    return {
+                        ...candidate,
+                        statement: candidateInfo[2] || "No statement provided",
+                        imageHash: candidateInfo[3] || "no-image"
+                    };
                 } catch (candidateErr) {
-                    console.error(`Error fetching details for candidate ${updatedCandidates[i].id}:`, candidateErr);
-                // Keep existing data, just log the error
+                    console.error(`Error fetching details for candidate ${candidate.id}:`, candidateErr);
+                    // Return the original candidate data on error for this specific one
+                    return candidate;
                 }
-            }
-            console.log("Completed fetching all candidate details from blockchain");
-            return updatedCandidates;
+            });
+            const resolvedCandidates = await Promise.all(candidatePromises);
+            console.log("Completed fetching candidate details from blockchain.");
+            return resolvedCandidates;
         } catch (err) {
-            console.error("Failed to fetch candidate data from contract:", err);
-            return candidateList // Return original list on failure
-            ;
+            console.error("Failed to fetch candidate data batch from contract:", err);
+            return candidateList; // Return original list on major failure
         }
     };
     // Fetch campaign data using GraphQL and contract calls
     const fetchCampaignData = async ()=>{
-        if (!campaignId) {
-            setError("Campaign ID is missing.");
-            setLoading(false);
+        // Only proceed if connected
+        if (!isConnected || !campaignId) {
+            // If not connected, the dialog will handle it.
+            // If no campaignId, set error and stop.
+            if (!campaignId) {
+                setError("Campaign ID is missing.");
+                setLoading(false);
+            }
             return;
         }
         try {
@@ -4863,13 +4876,14 @@ function CampaignDetailsPage() {
             setIsDuringVoting(duringVoting);
             setIsAfterEnd(afterEnd);
             // Process campaign metadata from Subgraph
-            const campaignDescription = `Campaign #${campaignId}`;
-            const campaignResultType = 0;
+            const campaignDescription = `Campaign #${campaignId}` // Placeholder, will be updated from contract if possible
+            ;
+            const campaignResultType = 0 // Placeholder
+            ;
             // Process proposals or candidates based on voting type
             let processedProposals = [];
             let processedCandidates = [];
             if (Number(campaignCreatedEvent.votingType) === 1) {
-                // Proposal-based - use Subgraph data
                 processedProposals = proposalData.map((proposal)=>{
                     const voteCount = voteCasts.filter((vote)=>String(vote.targetId) === String(proposal.proposalId)).length;
                     return {
@@ -4878,16 +4892,14 @@ function CampaignDetailsPage() {
                         voteCount: voteCount
                     };
                 });
-                setProposals(processedProposals);
             } else {
-                // Candidate-based - use Subgraph for basic data, will enhance with blockchain data later
                 processedCandidates = candidateData.map((candidate)=>{
                     const voteCount = voteCasts.filter((vote)=>String(vote.targetId) === String(candidate.candidateId)).length;
                     return {
                         id: Number(candidate.candidateId),
                         name: candidate.name,
                         address: candidate.candidateAddress,
-                        statement: "Loading statement from blockchain...",
+                        statement: "Loading statement...",
                         imageHash: "loading",
                         voteCount: voteCount
                     };
@@ -4908,45 +4920,54 @@ function CampaignDetailsPage() {
                 itemCount: Number(campaignCreatedEvent.votingType) === 1 ? proposalData.length : candidateData.length,
                 registeredVoterCount: voterRegistrations.length
             };
-            // User Status Checks - only check for owner, the rest comes from the hook
-            const isCampaignOwner = isConnected && address && campaignCreatedEvent.creator.toLowerCase() === address.toLowerCase();
+            // User Status Checks (Owner check only, rest uses hook)
+            const isCampaignOwner = address && campaignCreatedEvent.creator.toLowerCase() === address.toLowerCase();
             setIsOwner(isCampaignOwner);
-            // Set campaign info first to avoid loading delays
+            // Set initial campaign info & items from subgraph
             setCampaignInfo(baseCampaignData);
-            // Step 2: For candidate-based campaigns, fetch additional data from blockchain
-            if (baseCampaignData.votingType === 0) {
-                // Set initial candidate data from Subgraph
-                setCandidates(processedCandidates);
-                console.log("Initial candidate data set from Subgraph, fetching details from blockchain...");
-                // Then fetch additional data from contract and update
-                if (contract) {
-                    try {
-                        // Get campaign description and result type from contract
-                        console.log("Fetching campaign basic info from blockchain...");
-                        const basicInfo = await contract.getCampaignBasicInfo(campaignId);
-                        const updatedCampaignInfo = {
-                            ...baseCampaignData
-                        };
-                        updatedCampaignInfo.description = basicInfo[4] || baseCampaignInfo.description;
-                        updatedCampaignInfo.resultType = basicInfo[2] !== undefined ? Number(basicInfo[2]) : baseCampaignInfo.resultType;
-                        setCampaignInfo(updatedCampaignInfo);
-                        // Fetch detailed candidate data from contract (async)
-                        console.log("Fetching detailed candidate data from blockchain...");
-                        const enhancedCandidates = await fetchCandidateDataFromContract(campaignId, processedCandidates);
+            if (baseCampaignData.votingType === 1) {
+                setProposals(processedProposals);
+            } else {
+                setCandidates(processedCandidates) // Set initial candidates here
+                ;
+            }
+            // Step 2: Enhance with Blockchain Data (Description, ResultType, Candidate Details)
+            if (contract) {
+                try {
+                    console.log("Fetching campaign basic info & candidate details from blockchain...");
+                    const basicInfoPromise = contract.getCampaignBasicInfo(campaignId);
+                    const enhancedCandidatesPromise = baseCampaignData.votingType === 0 ? fetchCandidateDataFromContract(campaignId, processedCandidates) : Promise.resolve([]); // Don't fetch candidates if proposal-based
+                    const [basicInfo, enhancedCandidates] = await Promise.all([
+                        basicInfoPromise,
+                        enhancedCandidatesPromise
+                    ]);
+                    // Update campaign info with basic details from contract
+                    setCampaignInfo((prev)=>({
+                            ...prev,
+                            description: basicInfo[4] || prev.description,
+                            resultType: basicInfo[2] !== undefined ? Number(basicInfo[2]) : prev.resultType
+                        }));
+                    // Update candidates if it was a candidate-based campaign
+                    if (baseCampaignData.votingType === 0) {
                         setCandidates(enhancedCandidates);
-                        console.log("Candidate data successfully enhanced with blockchain data");
-                    } catch (err) {
-                        console.error("Error fetching additional contract data:", err);
-                    // We still have the basic data from Subgraph, so we can continue
+                        console.log("Candidate data updated from blockchain.");
                     }
-                } else {
-                    console.warn("Contract instance not available, using Subgraph data only for candidates");
+                } catch (err) {
+                    console.error("Error fetching additional contract data:", err);
+                // Continue with subgraph data, maybe set a specific error/warning state?
                 }
             } else {
-                // For proposal-based campaigns, just set the proposals from Subgraph
-                setProposals(processedProposals);
+                console.warn("Contract instance not available, using Subgraph data only.");
+                // If contract wasn't ready initially, set candidate statement to indicate lack of blockchain data
+                if (baseCampaignData.votingType === 0) {
+                    setCandidates((prev)=>prev.map((c)=>({
+                                ...c,
+                                statement: "Details unavailable (contract not loaded)",
+                                imageHash: "no-image"
+                            })));
+                }
             }
-            // Set initial active tab based on campaign status and user state
+            // Set initial active tab
             if (afterEnd) {
                 setActiveTab("results");
             } else if (duringVoting && userRegistered && !userVoted) {
@@ -4969,79 +4990,87 @@ function CampaignDetailsPage() {
             setLoading(false);
         }
     };
-    // Fetch data on mount and when dependencies change
+    // Fetch data when campaignId changes or connection status changes
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (campaignId) {
+        if (campaignId && isConnected) {
             fetchCampaignData();
+            if (refetchVoterStatus) refetchVoterStatus(); // Refetch voter status when connected
+        } else if (!isConnected) {
+            // Clear data if disconnected
+            setCampaignInfo(null);
+            setProposals([]);
+            setCandidates([]);
+            setError(null);
+            setLoading(false); // Stop loading if disconnected
         }
     }, [
         campaignId,
-        contract,
+        isConnected,
         address,
-        isConnected
-    ]);
-    // Add a separate effect to monitor contract changes
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (contract && campaignInfo?.votingType === 0 && candidates.length > 0 && candidates.some((c)=>c.statement === "Loading statement from blockchain...")) {
-            console.log("Contract available, refreshing candidate data from blockchain");
-            const updateCandidateData = async ()=>{
-                try {
-                    const enhancedCandidates = await fetchCandidateDataFromContract(campaignId, candidates);
-                    setCandidates(enhancedCandidates);
-                } catch (err) {
-                    console.error("Failed to update candidate data:", err);
-                }
-            };
-            updateCandidateData();
-        }
-    }, [
-        contract,
-        campaignInfo?.votingType
-    ]);
+        contract
+    ]); // Add contract dependency
+    // Add a separate effect to monitor contract changes *after* initial load if needed
+    // This might be redundant now with the check inside fetchCampaignData
+    // useEffect(() => {
+    //    if (contract && campaignInfo?.votingType === 0 && candidates.length > 0 && candidates.some(c => c.statement === "Loading statement...")) {
+    //       console.log("Contract available, refreshing candidate data from blockchain (secondary effect)");
+    //       fetchCandidateDataFromContract(campaignId, candidates)
+    //          .then(enhancedCandidates => setCandidates(enhancedCandidates))
+    //          .catch(err => console.error("Failed to update candidate data (secondary effect):", err));
+    //    }
+    // }, [contract, campaignInfo?.votingType]); // Only run when contract or votingType changes
     // Handle registration success
     const handleRegistrationSuccess = async ()=>{
-        // Optimistically update count
+        // Optimistic UI updates
         setCampaignInfo((prev)=>({
                 ...prev,
                 registeredVoterCount: (prev?.registeredVoterCount ?? 0) + 1
             }));
-        // Trigger subgraph refresh
-        if (refetchEvents) refetchEvents();
-        // Fully refetch data after a delay
-        setTimeout(fetchCampaignData, 2000);
+        // Refetch voter status from hook
+        if (refetchVoterStatus) {
+            await refetchVoterStatus();
+        }
+        // Trigger subgraph event refresh (optional, might cause race conditions)
+        // if (refetchEvents) refetchEvents();
+        // Fully refetch data after a short delay to allow subgraph/hook update
+        setTimeout(fetchCampaignData, 1500); // Adjust delay as needed
         setActiveTab("overview");
     };
     // Handle vote success
     const handleVoteSuccess = async (votedItemId)=>{
-        // Optimistically update counts
+        // Optimistic UI updates
         setCampaignInfo((prev)=>({
                 ...prev,
                 totalVotes: (prev?.totalVotes ?? 0) + 1
             }));
         // Optimistically update item vote count
         if (campaignInfo?.votingType === 1) {
-            // Proposal
             setProposals((prevProposals)=>prevProposals.map((p)=>String(p.id) === String(votedItemId) ? {
                         ...p,
                         voteCount: p.voteCount + 1
                     } : p));
         } else {
-            // Candidate
             setCandidates((prevCandidates)=>prevCandidates.map((c)=>String(c.id) === String(votedItemId) ? {
                         ...c,
                         voteCount: c.voteCount + 1
                     } : c));
         }
-        // Trigger subgraph refresh
-        if (refetchEvents) refetchEvents();
-        // Fully refetch data after a delay
-        setTimeout(fetchCampaignData, 2000);
-        setActiveTab("results");
+        // Refetch voter status from hook
+        if (refetchVoterStatus) {
+            await refetchVoterStatus();
+        }
+        // Trigger subgraph event refresh (optional)
+        // if (refetchEvents) refetchEvents();
+        // Fully refetch data after a short delay
+        setTimeout(fetchCampaignData, 1500); // Adjust delay
+        setActiveTab("results"); // Go to results after voting
     };
-    // Get status message based on campaign state and user status
+    // --- Get Status Message Function (simplified as connection is mandatory) ---
+    // This function now assumes the user IS connected, because the page won't render otherwise.
+    // We still need it for campaign status and eligibility messages.
     const getStatusMessage = ()=>{
-        // Add this condition at the beginning of the getStatusMessage function
-        if (voterStatusLoading && isConnected) {
+        // If voter status is still loading (after connection)
+        if (voterStatusLoading) {
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                 className: `border bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900/50`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
@@ -5051,40 +5080,70 @@ function CampaignDetailsPage() {
                             className: "h-4 w-4 mr-2 animate-spin"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 385,
-                            columnNumber: 13
+                            lineNumber: 411,
+                            columnNumber: 21
                         }, this),
-                        "Checking your registration status..."
+                        "Checking your registration and voting status..."
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 384,
-                    columnNumber: 11
+                    lineNumber: 410,
+                    columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 383,
-                columnNumber: 9
+                lineNumber: 409,
+                columnNumber: 13
             }, this);
         }
-        if (!campaignInfo) return null;
+        // Check for voter status error
+        if (voterStatusError) {
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
+                variant: "destructive",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
+                        className: "h-4 w-4"
+                    }, void 0, false, {
+                        fileName: "[project]/app/campaigns/[id]/page.jsx",
+                        lineNumber: 421,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
+                        children: [
+                            "Error checking your status: ",
+                            voterStatusError.message
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/campaigns/[id]/page.jsx",
+                        lineNumber: 422,
+                        columnNumber: 13
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/campaigns/[id]/page.jsx",
+                lineNumber: 420,
+                columnNumber: 11
+            }, this);
+        }
+        if (!campaignInfo) return null; // Should not happen if connected and loaded
         const alertBaseClasses = "border";
         const alertTextClasses = "flex items-center";
+        // Status based on campaign phase
         if (isAfterEnd) {
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                 className: `${alertBaseClasses} bg-purple-50 dark:bg-purple-950/20 border-purple-200 dark:border-purple-900/50`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                     className: alertTextClasses,
-                    children: "📊 This campaign has ended. Final results are available below."
+                    children: "📊 This campaign has ended. Final results are available."
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 402,
-                    columnNumber: 11
+                    lineNumber: 439,
+                    columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 399,
-                columnNumber: 9
+                lineNumber: 438,
+                columnNumber: 13
             }, this);
         }
         if (isBeforeStart) {
@@ -5093,213 +5152,173 @@ function CampaignDetailsPage() {
                     className: `${alertBaseClasses} bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900/50`,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                         className: alertTextClasses,
-                        children: "🎭 You are registered as a candidate for this campaign. Good luck!"
+                        children: "🎭 You are registered as a candidate. Good luck! Voting starts soon."
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 415,
-                        columnNumber: 13
+                        lineNumber: 450,
+                        columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 412,
-                    columnNumber: 11
+                    lineNumber: 449,
+                    columnNumber: 17
                 }, this);
             }
             if (campaignInfo.restriction === 0) {
-                // Open
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                     className: `${alertBaseClasses} bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900/50`,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                         className: alertTextClasses,
-                        children: "🗳️ This campaign is open to all. Voting starts soon!"
+                        children: "🗳️ Open campaign! Voting starts soon."
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 428,
-                        columnNumber: 13
+                        lineNumber: 459,
+                        columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 425,
-                    columnNumber: 11
-                }, this);
-            } else if (!isConnected) {
-                // Registration required, but wallet not connected
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
-                    className: `${alertBaseClasses} bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900/50`,
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
-                        className: alertTextClasses,
-                        children: [
-                            "🔐 This campaign requires registration.",
-                            " ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                variant: "link",
-                                className: "p-0 h-auto ml-1",
-                                onClick: connectWallet,
-                                children: "Connect wallet"
-                            }, void 0, false, {
-                                fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 441,
-                                columnNumber: 15
-                            }, this),
-                            " ",
-                            "to check status or register."
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 439,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 436,
-                    columnNumber: 11
+                    lineNumber: 458,
+                    columnNumber: 17
                 }, this);
             } else if (campaignInfo.restriction === 2 && !userRegistered) {
-                // Registration required, not registered
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                     className: `${alertBaseClasses} bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900/50`,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                         className: alertTextClasses,
-                        children: "🔐 This campaign requires registration. Go to the 'Register' tab to participate."
+                        children: "🔐 Registration required. Go to the 'Register' tab before voting starts."
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 454,
-                        columnNumber: 13
+                        lineNumber: 467,
+                        columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 451,
-                    columnNumber: 11
+                    lineNumber: 466,
+                    columnNumber: 17
                 }, this);
             } else {
-                // Registered (or Limited access assumed ok)
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                     className: `${alertBaseClasses} bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900/50`,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                         className: alertTextClasses,
-                        children: "🎉 You are eligible for this campaign! Voting will start soon."
+                        children: "🎉 You are eligible! Voting will start soon."
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 465,
-                        columnNumber: 13
+                        lineNumber: 475,
+                        columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 462,
-                    columnNumber: 11
+                    lineNumber: 474,
+                    columnNumber: 17
                 }, this);
             }
         }
         if (isDuringVoting) {
             if (isCandidate) {
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
-                    className: `${alertBaseClasses} bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900/50`,
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
-                        className: alertTextClasses,
-                        children: [
-                            "🎭 You are a candidate in this campaign.",
-                            " ",
-                            userVoted ? "You have already voted." : "You can also vote for other candidates."
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 479,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 476,
-                    columnNumber: 11
-                }, this);
-            }
-            if (!isConnected) {
-                // Voting active, but wallet not connected
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
-                    className: `${alertBaseClasses} bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900/50`,
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
-                        className: alertTextClasses,
-                        children: [
-                            "🗳️ Voting is active!",
-                            " ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                variant: "link",
-                                className: "p-0 h-auto ml-1",
-                                onClick: connectWallet,
-                                children: "Connect wallet"
-                            }, void 0, false, {
-                                fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 495,
-                                columnNumber: 15
-                            }, this),
-                            " ",
-                            "to check eligibility and vote."
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 493,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 490,
-                    columnNumber: 11
-                }, this);
-            } else if (userVoted) {
-                // Already voted
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
-                    className: `${alertBaseClasses} bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900/50`,
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
-                        className: alertTextClasses,
-                        children: "🙌 Thanks for voting! Your vote has been securely recorded."
+                // Even if candidate, check if they also need registration (unlikely but possible)
+                if (campaignInfo.restriction === 2 && !userRegistered) {
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
+                        className: `${alertBaseClasses} bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900/50`,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
+                            className: alertTextClasses,
+                            children: "🎭 You are a candidate, but registration was also required and missed. You cannot vote."
+                        }, void 0, false, {
+                            fileName: "[project]/app/campaigns/[id]/page.jsx",
+                            lineNumber: 489,
+                            columnNumber: 25
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 508,
-                        columnNumber: 13
+                        lineNumber: 488,
+                        columnNumber: 21
+                    }, this);
+                }
+                // Candidate, eligible to vote (or already voted)
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
+                    className: `${alertBaseClasses} bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900/50`,
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
+                        className: alertTextClasses,
+                        children: [
+                            "🎭 You are a candidate. ",
+                            userVoted ? "You have already voted." : "Go to the 'Vote' tab to cast your vote."
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/campaigns/[id]/page.jsx",
+                        lineNumber: 498,
+                        columnNumber: 22
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 505,
-                    columnNumber: 11
+                    lineNumber: 497,
+                    columnNumber: 18
+                }, this);
+            }
+            if (userVoted) {
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
+                    className: `${alertBaseClasses} bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900/50`,
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
+                        className: alertTextClasses,
+                        children: "🙌 Thanks for voting! Your vote is recorded."
+                    }, void 0, false, {
+                        fileName: "[project]/app/campaigns/[id]/page.jsx",
+                        lineNumber: 507,
+                        columnNumber: 21
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/campaigns/[id]/page.jsx",
+                    lineNumber: 506,
+                    columnNumber: 17
                 }, this);
             } else if (campaignInfo.restriction === 2 && !userRegistered) {
-                // Registration required, but not registered
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                     className: `${alertBaseClasses} bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900/50`,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                         className: alertTextClasses,
-                        children: "🍿 Registration was required for this campaign, but you did not register. You can view live results."
+                        children: "🍿 Registration was required, but you did not register. You cannot vote."
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 519,
-                        columnNumber: 13
+                        lineNumber: 515,
+                        columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 516,
-                    columnNumber: 11
+                    lineNumber: 514,
+                    columnNumber: 17
                 }, this);
             } else {
-                // Eligible to vote (Open, or Registered)
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                     className: `${alertBaseClasses} bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900/50`,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                         className: alertTextClasses,
-                        children: "🗳️ Voting is now open! Go to the 'Vote' tab to cast your vote."
+                        children: "🗳️ Voting is open! Go to the 'Vote' tab to cast your vote."
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 530,
-                        columnNumber: 13
+                        lineNumber: 523,
+                        columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 527,
-                    columnNumber: 11
+                    lineNumber: 522,
+                    columnNumber: 17
                 }, this);
             }
         }
-        return null;
+        return null; // Should not be reached if logic is correct
     };
-    // Render Logic
+    // ================= RENDER LOGIC =================
+    // --- 1. Show Mandatory Connect Dialog if not connected ---
+    if (!isConnected) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MandatoryWalletConnectDialog, {
+            onConnectWallet: connectWallet,
+            onGoBack: ()=>router.push('/campaigns')
+        }, void 0, false, {
+            fileName: "[project]/app/campaigns/[id]/page.jsx",
+            lineNumber: 540,
+            columnNumber: 7
+        }, this);
+    }
+    // --- 2. Show Loading state (only if connected) ---
     if (loading) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container max-w-5xl mx-auto py-10 mt-20",
@@ -5312,19 +5331,19 @@ function CampaignDetailsPage() {
                             className: "h-5 w-24"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 547,
+                            lineNumber: 555,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 546,
+                        lineNumber: 554,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                         className: "h-10 w-3/4 mx-auto"
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 549,
+                        lineNumber: 558,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5334,99 +5353,93 @@ function CampaignDetailsPage() {
                                 className: "h-6 w-20"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 551,
+                                lineNumber: 561,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                                 className: "h-6 w-24"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 552,
+                                lineNumber: 562,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                                 className: "h-6 w-28"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 553,
+                                lineNumber: 563,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 550,
+                        lineNumber: 560,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                         className: "h-24 w-full"
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 555,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
-                        className: "h-12 w-full"
-                    }, void 0, false, {
-                        fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 556,
+                        lineNumber: 566,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 md:grid-cols-3 gap-4",
+                        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                                 className: "h-32 w-full"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 558,
+                                lineNumber: 569,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                                 className: "h-32 w-full"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 559,
+                                lineNumber: 570,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                                 className: "h-32 w-full"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 560,
+                                lineNumber: 571,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 557,
-                        columnNumber: 11
+                        lineNumber: 568,
+                        columnNumber: 12
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                         className: "h-10 w-full"
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 562,
+                        lineNumber: 574,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Skeleton"], {
                         className: "h-64 w-full"
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 563,
+                        lineNumber: 576,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 545,
+                lineNumber: 552,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/campaigns/[id]/page.jsx",
-            lineNumber: 544,
+            lineNumber: 550,
             columnNumber: 7
         }, this);
     }
+    // --- 3. Show Error state (only if connected) ---
     if (error) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container max-w-3xl mx-auto py-10 mt-20 text-center",
@@ -5439,20 +5452,20 @@ function CampaignDetailsPage() {
                             className: "h-4 w-4"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 573,
+                            lineNumber: 587,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 574,
+                            lineNumber: 588,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 572,
+                    lineNumber: 586,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5466,46 +5479,48 @@ function CampaignDetailsPage() {
                                     className: "h-4 w-4 mr-2"
                                 }, void 0, false, {
                                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                    lineNumber: 578,
+                                    lineNumber: 592,
                                     columnNumber: 13
                                 }, this),
                                 "Back to Campaigns"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 577,
+                            lineNumber: 591,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                             onClick: fetchCampaignData,
                             children: [
+                                " ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__["RefreshCw"], {
                                     className: "h-4 w-4 mr-2"
                                 }, void 0, false, {
                                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                    lineNumber: 582,
+                                    lineNumber: 596,
                                     columnNumber: 13
                                 }, this),
                                 "Retry"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 581,
+                            lineNumber: 595,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 576,
+                    lineNumber: 590,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/campaigns/[id]/page.jsx",
-            lineNumber: 571,
+            lineNumber: 585,
             columnNumber: 7
         }, this);
     }
+    // --- 4. Show "Not Found" state (only if connected, finished loading, no error, but no campaignInfo) ---
     if (!campaignInfo) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container max-w-3xl mx-auto py-10 mt-20 text-center",
@@ -5516,20 +5531,20 @@ function CampaignDetailsPage() {
                             className: "h-4 w-4"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 594,
+                            lineNumber: 609,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
-                            children: "Campaign data could not be loaded."
+                            children: "Campaign data could not be loaded or campaign not found."
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 595,
+                            lineNumber: 610,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 593,
+                    lineNumber: 608,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -5541,24 +5556,30 @@ function CampaignDetailsPage() {
                             className: "h-4 w-4 mr-2"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 598,
+                            lineNumber: 613,
                             columnNumber: 11
                         }, this),
                         "Back to Campaigns"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 597,
+                    lineNumber: 612,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/campaigns/[id]/page.jsx",
-            lineNumber: 592,
+            lineNumber: 607,
             columnNumber: 7
         }, this);
     }
-    // Main Render
+    // --- 5. Render Main Content (only if connected and data is loaded successfully) ---
+    // Determine eligibility for voting/registering based on hook status
+    const canRegister = isBeforeStart && campaignInfo.restriction === 2 && !userRegistered && !isCandidate;
+    const canVote = isDuringVoting && (campaignInfo.restriction === 0 || userRegistered || isCandidate) && !userVoted;
+    const showResults = isDuringVoting || isAfterEnd || isOwner; // Show results if voting/ended/owner
+    // Filter candidate loading message only if applicable
+    const showCandidateLoadingMessage = campaignInfo?.votingType === 0 && candidates.some((c)=>c.statement === "Loading statement...");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "container max-w-5xl mx-auto py-10 mt-20",
         children: [
@@ -5572,19 +5593,19 @@ function CampaignDetailsPage() {
                             className: "h-4 w-4 mr-2"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 614,
+                            lineNumber: 639,
                             columnNumber: 11
                         }, this),
                         "Back to Campaigns"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 610,
+                    lineNumber: 635,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 609,
+                lineNumber: 634,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5592,10 +5613,13 @@ function CampaignDetailsPage() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "text-3xl md:text-4xl font-bold tracking-tight break-words",
-                        children: campaignInfo.description
-                    }, void 0, false, {
+                        children: [
+                            campaignInfo.description || `Campaign #${campaignId}`,
+                            " "
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 621,
+                        lineNumber: 646,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5603,51 +5627,52 @@ function CampaignDetailsPage() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
                                 variant: isDuringVoting ? "default" : isAfterEnd ? "secondary" : "outline",
-                                className: isDuringVoting ? "bg-green-600 hover:bg-green-700" : isAfterEnd ? "" : "text-blue-600 border-blue-300",
+                                className: isDuringVoting ? "bg-green-600 hover:bg-green-700 text-white" : isAfterEnd ? "" : "text-blue-600 border-blue-300",
                                 children: isBeforeStart ? "Upcoming" : isDuringVoting ? "Active" : "Ended"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 623,
-                                columnNumber: 11
+                                lineNumber: 651,
+                                columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
                                 variant: "outline",
                                 children: campaignInfo.votingType === 0 ? "Candidate-Based" : "Proposal-Based"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 631,
-                                columnNumber: 11
+                                lineNumber: 660,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
                                 variant: "outline",
-                                children: campaignInfo.restriction === 0 ? "Open To All" : campaignInfo.restriction === 1 ? "Limited (Token Gated)" : "Registration Required"
+                                children: campaignInfo.restriction === 0 ? "Open To All" : campaignInfo.restriction === 1 ? "Limited (Token Gated)" // Clarify if needed
+                                 : "Registration Required"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 632,
-                                columnNumber: 11
+                                lineNumber: 661,
+                                columnNumber: 13
                             }, this),
                             isCandidate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
                                 variant: "outline",
-                                className: "bg-purple-50 text-purple-600 border-purple-200",
+                                className: "bg-purple-50 text-purple-600 border-purple-200 dark:bg-purple-900/20 dark:text-purple-300 dark:border-purple-700",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"], {
                                         className: "h-3 w-3 mr-1"
                                     }, void 0, false, {
                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                        lineNumber: 641,
-                                        columnNumber: 15
+                                        lineNumber: 670,
+                                        columnNumber: 21
                                     }, this),
                                     " You are a Candidate"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 640,
-                                columnNumber: 13
+                                lineNumber: 669,
+                                columnNumber: 18
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 622,
+                        lineNumber: 649,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5658,13 +5683,13 @@ function CampaignDetailsPage() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 645,
-                        columnNumber: 9
+                        lineNumber: 674,
+                        columnNumber: 10
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 620,
+                lineNumber: 645,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -5677,41 +5702,41 @@ function CampaignDetailsPage() {
                             children: isBeforeStart ? "Voting Starts In" : isDuringVoting ? "Voting Ends In" : "Campaign Ended"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 651,
-                            columnNumber: 11
+                            lineNumber: 680,
+                            columnNumber: 12
                         }, this),
                         !isAfterEnd ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$campaigns$2f5b$id$5d2f$countdown$2d$timer$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             endTime: isBeforeStart ? campaignInfo.startTime : campaignInfo.endTime,
                             className: "max-w-md mx-auto text-2xl md:text-3xl font-semibold"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 655,
-                            columnNumber: 13
+                            lineNumber: 684,
+                            columnNumber: 14
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "text-lg font-medium text-muted-foreground",
                             children: "The voting period is over."
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 660,
-                            columnNumber: 13
+                            lineNumber: 689,
+                            columnNumber: 14
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 650,
-                    columnNumber: 9
+                    lineNumber: 679,
+                    columnNumber: 10
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 649,
-                columnNumber: 7
+                lineNumber: 678,
+                columnNumber: 8
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mb-6",
                 children: getStatusMessage()
             }, void 0, false, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 666,
+                lineNumber: 695,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5728,8 +5753,8 @@ function CampaignDetailsPage() {
                                         className: "h-5 w-5 text-primary flex-shrink-0 mt-1"
                                     }, void 0, false, {
                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                        lineNumber: 673,
-                                        columnNumber: 15
+                                        lineNumber: 703,
+                                        columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
@@ -5738,8 +5763,8 @@ function CampaignDetailsPage() {
                                                 children: "Timeline"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                lineNumber: 675,
-                                                columnNumber: 17
+                                                lineNumber: 705,
+                                                columnNumber: 18
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-sm text-muted-foreground mt-1 space-y-0.5",
@@ -5751,8 +5776,8 @@ function CampaignDetailsPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                        lineNumber: 677,
-                                                        columnNumber: 19
+                                                        lineNumber: 707,
+                                                        columnNumber: 20
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
@@ -5761,36 +5786,36 @@ function CampaignDetailsPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                        lineNumber: 678,
-                                                        columnNumber: 19
+                                                        lineNumber: 708,
+                                                        columnNumber: 20
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                lineNumber: 676,
-                                                columnNumber: 17
+                                                lineNumber: 706,
+                                                columnNumber: 18
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                        lineNumber: 674,
-                                        columnNumber: 15
+                                        lineNumber: 704,
+                                        columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 672,
-                                columnNumber: 13
+                                lineNumber: 702,
+                                columnNumber: 14
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 671,
-                            columnNumber: 11
+                            lineNumber: 701,
+                            columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 670,
-                        columnNumber: 9
+                        lineNumber: 700,
+                        columnNumber: 10
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
                         className: "border-border/50 bg-background/50 backdrop-blur-sm",
@@ -5803,8 +5828,8 @@ function CampaignDetailsPage() {
                                         className: "h-5 w-5 text-primary flex-shrink-0 mt-1"
                                     }, void 0, false, {
                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                        lineNumber: 688,
-                                        columnNumber: 15
+                                        lineNumber: 718,
+                                        columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
@@ -5813,8 +5838,8 @@ function CampaignDetailsPage() {
                                                 children: "Participation"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                lineNumber: 690,
-                                                columnNumber: 17
+                                                lineNumber: 720,
+                                                columnNumber: 18
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-sm text-muted-foreground mt-1 space-y-0.5",
@@ -5822,61 +5847,61 @@ function CampaignDetailsPage() {
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             "Total Votes Cast: ",
-                                                            campaignInfo.totalVotes
+                                                            campaignInfo.totalVotes ?? 0
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                        lineNumber: 692,
-                                                        columnNumber: 19
+                                                        lineNumber: 722,
+                                                        columnNumber: 20
                                                     }, this),
                                                     campaignInfo.restriction !== 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             "Registered: ",
-                                                            campaignInfo.registeredVoterCount
+                                                            campaignInfo.registeredVoterCount ?? 0
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                        lineNumber: 693,
-                                                        columnNumber: 54
+                                                        lineNumber: 723,
+                                                        columnNumber: 55
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             campaignInfo.votingType === 0 ? "Candidates" : "Proposals",
                                                             ": ",
-                                                            campaignInfo.itemCount
+                                                            campaignInfo.itemCount ?? 0
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                        lineNumber: 694,
-                                                        columnNumber: 19
+                                                        lineNumber: 724,
+                                                        columnNumber: 20
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                lineNumber: 691,
-                                                columnNumber: 17
+                                                lineNumber: 721,
+                                                columnNumber: 18
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                        lineNumber: 689,
-                                        columnNumber: 15
+                                        lineNumber: 719,
+                                        columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 687,
-                                columnNumber: 13
+                                lineNumber: 717,
+                                columnNumber: 14
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 686,
-                            columnNumber: 11
+                            lineNumber: 716,
+                            columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 685,
-                        columnNumber: 9
+                        lineNumber: 715,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
                         className: "border-border/50 bg-background/50 backdrop-blur-sm",
@@ -5889,8 +5914,8 @@ function CampaignDetailsPage() {
                                         className: "h-5 w-5 text-primary flex-shrink-0 mt-1"
                                     }, void 0, false, {
                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                        lineNumber: 706,
-                                        columnNumber: 15
+                                        lineNumber: 736,
+                                        columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
@@ -5899,8 +5924,8 @@ function CampaignDetailsPage() {
                                                 children: "Your Status"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                lineNumber: 708,
-                                                columnNumber: 17
+                                                lineNumber: 738,
+                                                columnNumber: 18
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-sm text-muted-foreground mt-1 space-y-0.5",
@@ -5912,134 +5937,136 @@ function CampaignDetailsPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                        lineNumber: 710,
-                                                        columnNumber: 19
+                                                        lineNumber: 740,
+                                                        columnNumber: 20
                                                     }, this),
-                                                    isConnected ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                    voterStatusLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__["RefreshCw"], {
+                                                                className: "h-4 w-4 mr-1 inline animate-spin"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/campaigns/[id]/page.jsx",
+                                                                lineNumber: 743,
+                                                                columnNumber: 28
+                                                            }, this),
+                                                            " Checking..."
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/campaigns/[id]/page.jsx",
+                                                        lineNumber: 743,
+                                                        columnNumber: 23
+                                                    }, this) : voterStatusError ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "text-red-600",
+                                                        children: "Error checking status"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/campaigns/[id]/page.jsx",
+                                                        lineNumber: 745,
+                                                        columnNumber: 23
+                                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
                                                             campaignInfo.restriction !== 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 children: [
                                                                     "Eligibility:",
                                                                     " ",
                                                                     userRegistered || isCandidate ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "text-green-600",
+                                                                        className: "text-green-600 dark:text-green-400",
                                                                         children: "Eligible"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                        lineNumber: 717,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 752,
+                                                                        columnNumber: 30
                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "text-red-600",
+                                                                        className: "text-red-600 dark:text-red-400",
                                                                         children: "Not Eligible/Registered"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                        lineNumber: 719,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 754,
+                                                                        columnNumber: 30
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                lineNumber: 714,
-                                                                columnNumber: 25
+                                                                lineNumber: 749,
+                                                                columnNumber: 26
                                                             }, this),
                                                             isCandidate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 children: [
                                                                     "Role: ",
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "text-purple-600",
+                                                                        className: "text-purple-600 dark:text-purple-400",
                                                                         children: "Candidate"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                        lineNumber: 725,
-                                                                        columnNumber: 33
+                                                                        lineNumber: 760,
+                                                                        columnNumber: 34
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                lineNumber: 724,
-                                                                columnNumber: 25
+                                                                lineNumber: 759,
+                                                                columnNumber: 26
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 children: [
                                                                     "Vote Status:",
                                                                     " ",
                                                                     userVoted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "text-green-600",
+                                                                        className: "text-green-600 dark:text-green-400",
                                                                         children: "Voted"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                        lineNumber: 730,
-                                                                        columnNumber: 38
+                                                                        lineNumber: 765,
+                                                                        columnNumber: 39
                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: "Not Voted Yet"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                        lineNumber: 730,
-                                                                        columnNumber: 86
+                                                                        lineNumber: 765,
+                                                                        columnNumber: 107
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                lineNumber: 728,
-                                                                columnNumber: 23
+                                                                lineNumber: 763,
+                                                                columnNumber: 24
                                                             }, this)
                                                         ]
-                                                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                                                variant: "link",
-                                                                size: "sm",
-                                                                className: "p-0 h-auto",
-                                                                onClick: connectWallet,
-                                                                children: "Connect wallet"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                                lineNumber: 735,
-                                                                columnNumber: 23
-                                                            }, this),
-                                                            " ",
-                                                            "to check"
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                        lineNumber: 734,
-                                                        columnNumber: 21
-                                                    }, this)
+                                                    }, void 0, true)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                                lineNumber: 709,
-                                                columnNumber: 17
+                                                lineNumber: 739,
+                                                columnNumber: 18
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                        lineNumber: 707,
-                                        columnNumber: 15
+                                        lineNumber: 737,
+                                        columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 705,
-                                columnNumber: 13
+                                lineNumber: 735,
+                                columnNumber: 14
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 704,
-                            columnNumber: 11
+                            lineNumber: 734,
+                            columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 703,
-                        columnNumber: 9
+                        lineNumber: 733,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 669,
+                lineNumber: 698,
                 columnNumber: 7
             }, this),
-            campaignInfo?.votingType === 0 && candidates.some((c)=>c.statement === "Loading statement from blockchain...") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
+            showCandidateLoadingMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Alert"], {
                 className: "mb-4 bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900/50",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDescription"], {
                     className: "flex items-center",
@@ -6048,20 +6075,20 @@ function CampaignDetailsPage() {
                             className: "h-4 w-4 mr-2 animate-spin"
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 752,
-                            columnNumber: 15
+                            lineNumber: 780,
+                            columnNumber: 16
                         }, this),
                         "Loading candidate details from blockchain..."
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/campaigns/[id]/page.jsx",
-                    lineNumber: 751,
-                    columnNumber: 13
+                    lineNumber: 779,
+                    columnNumber: 14
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 750,
-                columnNumber: 11
+                lineNumber: 778,
+                columnNumber: 12
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tabs"], {
                 value: activeTab,
@@ -6076,37 +6103,37 @@ function CampaignDetailsPage() {
                                 children: "Overview"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 761,
+                                lineNumber: 789,
                                 columnNumber: 11
                             }, this),
-                            isBeforeStart && campaignInfo.restriction === 2 && !userRegistered && !isCandidate && isConnected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
+                            canRegister && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
                                 value: "register",
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 765,
-                                columnNumber: 13
+                                lineNumber: 790,
+                                columnNumber: 27
                             }, this),
-                            isDuringVoting && (userRegistered || isCandidate) && !userVoted && isConnected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
+                            canVote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
                                 value: "vote",
                                 children: "Vote"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 769,
-                                columnNumber: 13
+                                lineNumber: 791,
+                                columnNumber: 23
                             }, this),
-                            (isDuringVoting || isAfterEnd || isOwner && isConnected) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
+                            showResults && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
                                 value: "results",
                                 children: "Results"
                             }, void 0, false, {
                                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                                lineNumber: 773,
-                                columnNumber: 13
+                                lineNumber: 792,
+                                columnNumber: 27
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 760,
+                        lineNumber: 788,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -6124,15 +6151,15 @@ function CampaignDetailsPage() {
                             campaignId: campaignId
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 778,
+                            lineNumber: 797,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 777,
+                        lineNumber: 796,
                         columnNumber: 9
                     }, this),
-                    isBeforeStart && campaignInfo.restriction === 2 && !userRegistered && !isCandidate && isConnected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
+                    canRegister && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
                         value: "register",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$campaigns$2f5b$id$5d2f$register$2d$tab$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             campaignInfo: campaignInfo,
@@ -6143,15 +6170,15 @@ function CampaignDetailsPage() {
                             onRegistrationSuccess: handleRegistrationSuccess
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 794,
+                            lineNumber: 814,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 793,
+                        lineNumber: 813,
                         columnNumber: 11
                     }, this),
-                    isDuringVoting && (userRegistered || isCandidate) && !userVoted && isConnected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
+                    canVote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
                         value: "vote",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$campaigns$2f5b$id$5d2f$vote$2d$tab$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             campaignInfo: campaignInfo,
@@ -6164,15 +6191,15 @@ function CampaignDetailsPage() {
                             onVoteSuccess: handleVoteSuccess
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 807,
+                            lineNumber: 828,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 806,
+                        lineNumber: 827,
                         columnNumber: 11
                     }, this),
-                    (isDuringVoting || isAfterEnd || isOwner && isConnected) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
+                    showResults && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
                         value: "results",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$campaigns$2f5b$id$5d2f$results$2d$tab$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             campaignInfo: campaignInfo,
@@ -6180,27 +6207,29 @@ function CampaignDetailsPage() {
                             candidates: candidates,
                             isOwner: isOwner,
                             isDuringVoting: isDuringVoting,
-                            isAfterEnd: isAfterEnd
+                            isAfterEnd: isAfterEnd,
+                            contract: contract,
+                            campaignId: campaignId
                         }, void 0, false, {
                             fileName: "[project]/app/campaigns/[id]/page.jsx",
-                            lineNumber: 822,
+                            lineNumber: 844,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/campaigns/[id]/page.jsx",
-                        lineNumber: 821,
+                        lineNumber: 843,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/campaigns/[id]/page.jsx",
-                lineNumber: 759,
+                lineNumber: 787,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/campaigns/[id]/page.jsx",
-        lineNumber: 607,
+        lineNumber: 632,
         columnNumber: 5
     }, this);
 }

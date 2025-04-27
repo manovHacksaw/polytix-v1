@@ -1,5 +1,4 @@
 {
-  "/activity/page": "app/activity/page.js",
   "/campaigns/[id]/page": "app/campaigns/[id]/page.js",
   "/campaigns/page": "app/campaigns/page.js",
   "/create/page": "app/create/page.js",

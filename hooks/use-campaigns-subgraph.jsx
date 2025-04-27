@@ -4,7 +4,7 @@ import { gql, ApolloClient, InMemoryCache } from '@apollo/client';
 
 export function useCampaignsSubgraph(searchTerm = "", sortOrder = "latest", filterType = "all") {
   const client = new ApolloClient({
-    uri: 'https://api.studio.thegraph.com/query/101223/polytix/version/latest',
+    uri: 'https://api.studio.thegraph.com/query/101223/polytix-final/version/latest',
     cache: new InMemoryCache(),
   });
   
