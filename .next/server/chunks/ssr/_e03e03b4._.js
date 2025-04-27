@@ -637,7 +637,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$js__$5b$app$
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2d$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/skeleton-card.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up-right.js [app-ssr] (ecmascript) <export default as ArrowUpRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$campaigns$2d$subgraph$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/use-campaigns-subgraph.jsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$contract$2d$context$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/context/contract-context.jsx [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -649,6 +651,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$campaigns$2d
 ;
 function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "all" }) {
     const { campaigns, loading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$campaigns$2d$subgraph$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCampaignsSubgraph"])(searchTerm, sortOrder, filterType);
+    const { contract } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$contract$2d$context$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContract"])();
     const getStatusBadge = (startTime, endTime)=>{
         const now = Math.floor(Date.now() / 1000);
         if (now < startTime) {
@@ -658,7 +661,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                 children: "Upcoming"
             }, void 0, false, {
                 fileName: "[project]/components/active-campaigns.jsx",
-                lineNumber: 17,
+                lineNumber: 20,
                 columnNumber: 14
             }, this);
         } else if (now < endTime) {
@@ -667,7 +670,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                 children: "Active"
             }, void 0, false, {
                 fileName: "[project]/components/active-campaigns.jsx",
-                lineNumber: 19,
+                lineNumber: 22,
                 columnNumber: 14
             }, this);
         } else {
@@ -676,7 +679,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                 children: "Ended"
             }, void 0, false, {
                 fileName: "[project]/components/active-campaigns.jsx",
-                lineNumber: 21,
+                lineNumber: 24,
                 columnNumber: 14
             }, this);
         }
@@ -690,12 +693,12 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                 3
             ].map((i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2d$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SkeletonCard"], {}, i, false, {
                     fileName: "[project]/components/active-campaigns.jsx",
-                    lineNumber: 29,
+                    lineNumber: 32,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/components/active-campaigns.jsx",
-            lineNumber: 27,
+            lineNumber: 30,
             columnNumber: 7
         }, this);
     }
@@ -708,7 +711,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                     children: searchTerm ? "No campaigns found matching your search" : "No campaigns found"
                 }, void 0, false, {
                     fileName: "[project]/components/active-campaigns.jsx",
-                    lineNumber: 38,
+                    lineNumber: 41,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -716,7 +719,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                     children: searchTerm ? "Try adjusting your search terms" : "Be the first to create a voting campaign!"
                 }, void 0, false, {
                     fileName: "[project]/components/active-campaigns.jsx",
-                    lineNumber: 41,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -726,18 +729,18 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                         children: "Create Campaign"
                     }, void 0, false, {
                         fileName: "[project]/components/active-campaigns.jsx",
-                        lineNumber: 45,
+                        lineNumber: 48,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/active-campaigns.jsx",
-                    lineNumber: 44,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/active-campaigns.jsx",
-            lineNumber: 37,
+            lineNumber: 40,
             columnNumber: 7
         }, this);
     }
@@ -756,14 +759,14 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                                         children: campaign.description
                                     }, void 0, false, {
                                         fileName: "[project]/components/active-campaigns.jsx",
-                                        lineNumber: 60,
+                                        lineNumber: 63,
                                         columnNumber: 15
                                     }, this),
                                     getStatusBadge(campaign.startTime, campaign.endTime)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/active-campaigns.jsx",
-                                lineNumber: 59,
+                                lineNumber: 62,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -773,13 +776,13 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/active-campaigns.jsx",
-                                lineNumber: 63,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/active-campaigns.jsx",
-                        lineNumber: 58,
+                        lineNumber: 61,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -793,7 +796,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/active-campaigns.jsx",
-                                    lineNumber: 69,
+                                    lineNumber: 72,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -803,7 +806,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/active-campaigns.jsx",
-                                    lineNumber: 70,
+                                    lineNumber: 73,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -814,7 +817,7 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                                             children: campaign.votingType === 0 ? "Candidate-based" : "Proposal-based"
                                         }, void 0, false, {
                                             fileName: "[project]/components/active-campaigns.jsx",
-                                            lineNumber: 72,
+                                            lineNumber: 75,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -822,24 +825,24 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                                             children: campaign.restriction === 0 ? "Open" : campaign.restriction === 1 ? "Limited" : "Registration"
                                         }, void 0, false, {
                                             fileName: "[project]/components/active-campaigns.jsx",
-                                            lineNumber: 75,
+                                            lineNumber: 78,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/active-campaigns.jsx",
-                                    lineNumber: 71,
+                                    lineNumber: 74,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/active-campaigns.jsx",
-                            lineNumber: 68,
+                            lineNumber: 71,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/active-campaigns.jsx",
-                        lineNumber: 67,
+                        lineNumber: 70,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -855,34 +858,34 @@ function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "
                                         className: "ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                                     }, void 0, false, {
                                         fileName: "[project]/components/active-campaigns.jsx",
-                                        lineNumber: 85,
+                                        lineNumber: 88,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/active-campaigns.jsx",
-                                lineNumber: 83,
+                                lineNumber: 86,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/active-campaigns.jsx",
-                            lineNumber: 82,
+                            lineNumber: 85,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/active-campaigns.jsx",
-                        lineNumber: 81,
+                        lineNumber: 84,
                         columnNumber: 11
                     }, this)
                 ]
             }, campaign.id, true, {
                 fileName: "[project]/components/active-campaigns.jsx",
-                lineNumber: 54,
+                lineNumber: 57,
                 columnNumber: 9
             }, this))
     }, void 0, false, {
         fileName: "[project]/components/active-campaigns.jsx",
-        lineNumber: 52,
+        lineNumber: 55,
         columnNumber: 5
     }, this);
 }

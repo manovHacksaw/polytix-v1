@@ -23,7 +23,7 @@ import { useVoterStatus } from "@/hooks/use-voter-status"
 
 // GraphQL client setup
 const client = new ApolloClient({
-  uri: "https://api.studio.thegraph.com/query/101223/polytix/version/latest",
+  uri: "https://api.studio.thegraph.com/query/101223/polytix-final/v0.0.2",
   cache: new InMemoryCache(),
 })
 

@@ -7,9 +7,12 @@ import { formatDate, formatAddress } from "@/lib/utils"
 import { SkeletonCard } from "@/components/ui/skeleton-card"
 import { ArrowUpRight } from "lucide-react"
 import { useCampaignsSubgraph } from "@/hooks/use-campaigns-subgraph"
+import { useContract } from "@/context/contract-context"
 
 export function ActiveCampaigns({ searchTerm = "", sortOrder = "latest", filterType = "all" }) {
   const { campaigns, loading } = useCampaignsSubgraph(searchTerm, sortOrder, filterType);
+  const { contract } = useContract();
+
 
   const getStatusBadge = (startTime, endTime) => {
     const now = Math.floor(Date.now() / 1000);

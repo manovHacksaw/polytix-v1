@@ -8,9 +8,9 @@ dataSources:
     name: Polytix
     network: polygon-amoy
     source:
-      address: "0x17bad1451ABE049391c8EaBC89EF594A81907121"
+      address: "0x65094D0f045924A8253D0Fbd524091e513B4bb75"
       abi: Polytix
-      startBlock: 20960294
+      startBlock: 20964005
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

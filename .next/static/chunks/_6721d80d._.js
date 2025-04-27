@@ -662,7 +662,7 @@ __turbopack_context__.s({
     "currencyName": (()=>currencyName),
     "currencySymbol": (()=>currencySymbol)
 });
-const CONTRACT_ADDRESS = "0x17bad1451ABE049391c8EaBC89EF594A81907121";
+const CONTRACT_ADDRESS = "0x65094D0f045924A8253D0Fbd524091e513B4bb75";
 const POLYGON_AMOY_CHAIN_ID = 80002;
 const chainName = "Polygon AMOY Testnet";
 const currencyName = "POL";
@@ -900,15 +900,9 @@ const metadata = {
                         "type": "address"
                     },
                     {
-                        "indexed": true,
-                        "internalType": "string",
-                        "name": "name",
-                        "type": "string"
-                    },
-                    {
                         "indexed": false,
                         "internalType": "string",
-                        "name": "description",
+                        "name": "name",
                         "type": "string"
                     },
                     {
@@ -1371,11 +1365,6 @@ const metadata = {
                 "name": "campaignMetadata",
                 "outputs": [
                     {
-                        "internalType": "string",
-                        "name": "name",
-                        "type": "string"
-                    },
-                    {
                         "internalType": "enum Polytix.VotingType",
                         "name": "votingType",
                         "type": "uint8"
@@ -1394,6 +1383,11 @@ const metadata = {
                         "internalType": "address",
                         "name": "creator",
                         "type": "address"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
                     },
                     {
                         "internalType": "string",
@@ -1593,6 +1587,11 @@ const metadata = {
                         "internalType": "address",
                         "name": "creator",
                         "type": "address"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
                     },
                     {
                         "internalType": "string",
@@ -2791,7 +2790,6 @@ const metadata = {
                         "description": "Campaign description",
                         "endTime": "Campaign end time",
                         "maxVoters": "Maximum number of voters (for limited campaigns)",
-                        "name": "Campaign name // <<< ADD NAME PARAMETER >>>",
                         "passKey": "Registration passkey",
                         "restriction": "Voting restriction type",
                         "resultType": "Result calculation type",
@@ -2804,7 +2802,6 @@ const metadata = {
                         "description": "Campaign description",
                         "endTime": "Campaign end time",
                         "maxVoters": "Maximum number of voters (for limited campaigns)",
-                        "name": "Campaign name  // <<< ADD NAME PARAMETER >>>",
                         "passKey": "Registration passkey",
                         "proposals": "Array of initial proposals",
                         "restriction": "Voting restriction type",
@@ -3267,11 +3264,11 @@ const metadata = {
             ]
         },
         "contracts/Poltix.sol": {
-            "keccak256": "0x03be4f548667b9347cde28f19ac76819ebb9301df9afc05611c0b9fc0bc16ffa",
+            "keccak256": "0x7a90d4c481c0eeabc0ed9bdf973bf2ca5f7e3d826fc3cc411ebb3090aeba0525",
             "license": "MIT",
             "urls": [
-                "bzz-raw://9998d3e56f95658c61fdbfc803c6fb9752d3252b8eddb44136de28ba61659213",
-                "dweb:/ipfs/QmTA9pZUCoTqF5MHoTtDq8bfAcrnqygapuAf2MzwjJviiL"
+                "bzz-raw://355c32c6c99a4603cf149c7c5317c635ae6f1adf083d1907dd8cef4b3fcc5c7d",
+                "dweb:/ipfs/QmX7o9fpdpLF1DrgmM2FNVGrBd93Z25YX8HvDVr85W1p9o"
             ]
         }
     },
@@ -4030,7 +4027,7 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$core$2f$ApolloClient$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["ApolloClient"]({
-    uri: 'https://api.studio.thegraph.com/query/101223/polytix/v1.1',
+    uri: 'https://api.studio.thegraph.com/query/101223/polytix-final/version/latest',
     cache: new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$cache$2f$inmemory$2f$inMemoryCache$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["InMemoryCache"]()
 });
 const SubgraphContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(null);

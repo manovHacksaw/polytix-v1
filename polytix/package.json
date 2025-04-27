@@ -1,13 +1,13 @@
 {
-  "name": "subgraph",
+  "name": "polytix",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ subgraph",
-    "create-local": "graph create --node http://localhost:8020/ subgraph",
-    "remove-local": "graph remove --node http://localhost:8020/ subgraph",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 subgraph",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ polytix",
+    "create-local": "graph create --node http://localhost:8020/ polytix",
+    "remove-local": "graph remove --node http://localhost:8020/ polytix",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 polytix",
     "test": "graph test"
   },
   "dependencies": {
