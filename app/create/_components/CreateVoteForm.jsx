@@ -270,7 +270,7 @@ export default function CreateVoteForm() {
       if (formData.campaignType === "proposal") {
         // Use createProposalBasedCampaign from the contract
         tx = await contract.createProposalBasedCampaign(
-          formData.name,
+          // formData.name,
           formData.description,
           Number.parseInt(formData.restriction),
           Number.parseInt(formData.resultType),

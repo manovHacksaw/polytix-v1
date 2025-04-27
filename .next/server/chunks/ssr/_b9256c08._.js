@@ -3062,7 +3062,8 @@ function CreateVoteForm() {
             let campaignId;
             if (formData.campaignType === "proposal") {
                 // Use createProposalBasedCampaign from the contract
-                tx = await contract.createProposalBasedCampaign(formData.name, formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "", formData.proposals.filter((p)=>p.trim().length > 0));
+                tx = await contract.createProposalBasedCampaign(// formData.name,
+                formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "", formData.proposals.filter((p)=>p.trim().length > 0));
             } else {
                 // Use createCandidateBasedCampaign from the contract
                 tx = await contract.createCandidateBasedCampaign(formData.name, formData.description, Number.parseInt(formData.restriction), Number.parseInt(formData.resultType), startTimestamp, endTimestamp, maxVoters, formData.passKey || "");

@@ -4722,7 +4722,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$voter$2d$sta
 ;
 // GraphQL client setup
 const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$core$2f$ApolloClient$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["ApolloClient"]({
-    uri: "https://api.studio.thegraph.com/query/101223/polytix/version/latest",
+    uri: "https://api.studio.thegraph.com/query/101223/polytix-final/version/latest",
     cache: new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$apollo$2f$client$2f$cache$2f$inmemory$2f$inMemoryCache$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InMemoryCache"]()
 });
 // GraphQL query for campaign details
